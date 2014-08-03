@@ -10,6 +10,7 @@
 #import "AAScheduleLoader.h"
 #import "AASchoolDayCDTVC.h"
 #import "AATeacherLoader.h"
+#import "TestFlight.h"
 
 @implementation AAAppDelegate
 
@@ -88,6 +89,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Initialize TestFlight API
+    [TestFlight takeOff:@"e3f67dcb-b0e1-4e81-9b7a-310076574391"];
     // Override point for customization after application launch.
     [self setupManagedDocument];
     return YES;
