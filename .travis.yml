@@ -1,0 +1,25 @@
+language: objective-c
+before_script: 
+- chmod +x scripts/before.sh
+- "./scripts/before.sh"
+script: "./scripts/test.sh"
+after_success:
+- "./scripts/testflight.sh"
+after_script:
+- "./scripts/remove-key.sh"
+env:
+  global:
+  - PROJECT_SUBDIR=Poing
+  - BUILD_SCHEME='Poing'
+  - BUILD_CONFIGURATION='Release'
+  - BUILD_SDK=iphoneos7.1
+  - DISTRIBUTION_LISTS="Poing Test"
+  - APPNAME="Poing"
+  - 'DEVELOPER_NAME="iPhone Distribution: Iolani School"'
+  - PROFILE_NAME=Poing_Distribution
+  - APPLE_CERT=apple
+  - DISTRIBUTION_CERT=iolani-distro
+  - TESTFLIGHT_BRANCH=production
+  - secure: IaMg1DQfURZMrojHL3mC6D0a6D4nLiwFhYqRxd7IvLuCBadX9yO288ONANLuZMLLgI9PTwlacxeIHG27hiEFqSu4ss5f0Dn8bJRai//gQ6zpquoqxqjYq+7/gIFs6arEqaCEI0flMaLrq+pS0LjL1lsAepA61rnQVLMqWNYWVAU=
+  - secure: T+yeqsy7ZOsFmZFmvb5R4YC04UI3KBFtpVwD4by7HnXxam5XnYXMrVaYO7axWZ/sihyuADSZb1vlYyhDi/lBzZineqfZ/weQrLoP+tQbm+xcYPfWIt24Vl/FbMCAfLxggOa4PgNtjy2G+PMR1fw7g/p/2JZRQIgoQUdcYDBAg18=
+  - secure: XRiB3GrNRdRop4h7QRR/Mhe9CHPp0KN/VDx3ZXyFggS3ObJwN4QxA6IB1bi5bHpgJevCcl2+y4Xm3MNb/ZvmgrGxTN34NLD02h37r8qGWIBXbnR9LwThItdiIs8Bz02kGwuf63COYxvK5J1Th1dJuGTp80mG2Q0jPHVyvoaZhMU=
