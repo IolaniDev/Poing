@@ -9,7 +9,7 @@ after_script:
 - "./scripts/remove-key.sh"
 env:
   global:
-  - PROJECT_SUBDIR=Poing
+  - XCODEPROJ=Poing/Poing
   - BUILD_SCHEME='Poing'
   - BUILD_CONFIGURATION='Release'
   - BUILD_SDK=iphoneos7.1
