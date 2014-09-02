@@ -194,36 +194,36 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
 {
     // Change bell-cycle for Moving Up Chapel day from
     // regular "Chapel" to "Chapel Moving Up".
-    [self overDayString:@"2014-05-22"
-               bellName:BELL_CHAPEL_MOVING_UP
-              cycleName:CYCLE_7
-                context:context];
+//    [self overDayString:@"2014-05-22"
+//               bellName:BELL_CHAPEL_MOVING_UP
+//              cycleName:CYCLE_7
+//                context:context];
     
     // Change bell-cycle for March 31, 2014 from
     // "Chapel - Cycle 1" to "Assembly 1 - Cycle 1".
-    [self overDayString:@"2014-03-31"
-               bellName:BELL_ASSEMBLY_1
-              cycleName:CYCLE_1
-                context:context];
+//    [self overDayString:@"2014-03-31"
+//               bellName:BELL_ASSEMBLY_1
+//              cycleName:CYCLE_1
+//                context:context];
     
     // Extended days in 4/2014 are wrong!
     // The must be swapped with the week before they were stated in the data.
-    [self overDayString:@"2014-04-09"
-               bellName:BELL_EXTENDED_2_7153
-              cycleName:CYCLE_7
-                context:context];
-    [self overDayString:@"2014-04-10"
-               bellName:BELL_EXTENDED_2_8264
-              cycleName:CYCLE_7
-                context:context];
-    [self overDayString:@"2014-04-16"
-               bellName:BELL_BASIC
-              cycleName:CYCLE_3
-                context:context];
-    [self overDayString:@"2014-04-17"
-               bellName:BELL_CHAPEL
-              cycleName:CYCLE_3
-                context:context];
+//    [self overDayString:@"2014-04-09"
+//               bellName:BELL_EXTENDED_2_7153
+//              cycleName:CYCLE_7
+//                context:context];
+//    [self overDayString:@"2014-04-10"
+//               bellName:BELL_EXTENDED_2_8264
+//              cycleName:CYCLE_7
+//                context:context];
+//    [self overDayString:@"2014-04-16"
+//               bellName:BELL_BASIC
+//              cycleName:CYCLE_3
+//                context:context];
+//    [self overDayString:@"2014-04-17"
+//               bellName:BELL_CHAPEL
+//              cycleName:CYCLE_3
+//                context:context];
 }
 
 + (void)loadBasicPeriodDataIntoContext:(NSManagedObjectContext *)context
