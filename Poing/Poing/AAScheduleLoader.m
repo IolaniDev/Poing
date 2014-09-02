@@ -157,7 +157,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadAssembly1PeriodDataIntoContext:context];
     [self loadAssembly2PeriodDataIntoContext:context];
     [self loadAssembly3PeriodDataIntoContext:context];
-    [self loadVarietyAtheleticPeriodDataIntoContext:context];
+    [self loadVarietyAthleticPeriodDataIntoContext:context];
     [self loadConvocationPeriodDataIntoContext:context];
     [self loadFairPeriodDataIntoContext:context];
     [self loadMayDayPeriodDataIntoContext:context];
@@ -660,7 +660,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                  times:times intoManagedObjectContext:context];
 }
 
-+ (void)loadVarietyAtheleticPeriodDataIntoContext:(NSManagedObjectContext *)context
++ (void)loadVarietyAthleticPeriodDataIntoContext:(NSManagedObjectContext *)context
 {
     NSString *bellType = BELL_VARIETY_ATHLETIC_ASSEMBLY;
     NSArray *periods = nil;
