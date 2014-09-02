@@ -57,14 +57,14 @@
 
 + (BOOL)scheduleLoadRequired:(NSManagedObjectContext *)context
 {
-    BOOL hasFirstDay = (BOOL)[SchoolDay schoolDayForString:@"2013-08-26"
+    BOOL hasFirstDay = (BOOL)[SchoolDay schoolDayForString:@"2014-08-25"
                                            inContext:context];
+    BOOL hasUpdatedWk3 = (BOOL)[SchoolDay schoolDayForString:@"2014-09-12" inContext:context];
+//    SchoolDay *day = [SchoolDay schoolDayForString:@"2014-04-17"
+//                                         inContext:context];
+//    BOOL hasLatestOverride = (BOOL)[day.bellCycle.bell.name isEqualToString:BELL_CHAPEL];
     
-    SchoolDay *day = [SchoolDay schoolDayForString:@"2014-04-17"
-                                         inContext:context];
-    BOOL hasLatestOverride = (BOOL)[day.bellCycle.bell.name isEqualToString:BELL_CHAPEL];
-    
-    return !hasFirstDay || !hasLatestOverride;
+    return !hasFirstDay || !hasUpdatedWk3  /*|| !hasLatestOverride */;
 }
 
 + (void)loadScheduleDataWithContext:(NSManagedObjectContext *)context
