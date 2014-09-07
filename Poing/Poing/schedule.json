@@ -9,6 +9,6 @@
 {"id":9,"day":"2014-09-05","cycle":7,"title":"Assembly 1 Schedule"},
 {"id":10,"day":"2014-09-08","cycle":3,"title":"Basic Schedule"},
 {"id":11,"day":"2014-09-09","cycle":3,"title":"Chapel Schedule"},
-{"id":12,"day":"2014-09-10","cycle":3,"title":"Extended 3 Schedule (4,8,6,2)"},
-{"id":13,"day":"2014-09-11","cycle":3,"title":"Extended 3 Schedule (3,7,5,1)"},
+{"id":12,"day":"2014-09-10","cycle":3,"title":"Pilot Extended 3 Schedule (4,8,6,2)"},
+{"id":13,"day":"2014-09-11","cycle":3,"title":"Pilot Extended 3 Schedule (3,7,5,1)"},
 {"id":14,"day":"2014-09-12","cycle":3,"title":"Basic Schedule"}]

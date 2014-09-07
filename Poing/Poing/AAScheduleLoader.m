@@ -32,6 +32,8 @@
 #define BELL_SPECIAL_MAY_DAY @"Special May Day Schedule"
 #define BELL_VARIETY_ATHLETIC_ASSEMBLY @"Variety/Athletic Assembly Schedule"
 #define BELL_CHAPEL_MOVING_UP @"Moving Up Chapel Schedule"
+#define BELL_PILOT_SCHEDULE_1_4862 @"Pilot 1 Extended 3 Schedule (3,7,5,1)"
+#define BELL_PILOT_SCHEDULE_1_3751 @"Pilot Extended 3 Schedule (4,8,6,2)"
 
 #define CYCLE_1 @"1"
 #define CYCLE_3 @"3"
@@ -162,6 +164,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadFairPeriodDataIntoContext:context];
     [self loadMayDayPeriodDataIntoContext:context];
     [self loadMovingUpChapelPeriodDataIntoContext:context];
+    [self loadPilotSchedule1DataIntoContext:context];
  
     // These must go last. They correct errors in the raw schedule.
     [self overrides:context];
@@ -856,6 +859,48 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_4];
     [self loadBellName:bellType
              cycleName:CYCLE_7
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+}
+
++ (void) loadPilotSchedule1DataIntoContext: (NSManagedObjectContext *)context
+{
+    NSArray *periods = nil;
+    
+    NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
+                       @{@"start": @"07:50", @"end": @"08:10"},
+                       @{@"start": @"08:15", @"end": @"09:35"},
+                       @{@"start": @"09:40", @"end": @"11:00"},
+                       @{@"start": @"11:05", @"end": @"11:35"},
+                       @{@"start": @"11:35", @"end": @"12:10"},
+                       @{@"start": @"12:15", @"end": @"13:35"},
+                       @{@"start": @"13:40", @"end": @"15:00"}];
+    
+    // Pilot 1 Extended 3:3751 - CYCLE 3
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CHAPEL,
+                PERIOD_3,
+                PERIOD_7,
+                PERIOD_MEETING,
+                PERIOD_LUNCH,
+                PERIOD_5,
+                PERIOD_1];
+    [self loadBellName:BELL_PILOT_SCHEDULE_1_3751
+             cycleName:CYCLE_3
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // Pilot 1 Extended 3:4862 - CYCLE 3
+    periods = @[PERIOD_HOME_ROOM,
+               PERIOD_CHAPEL,
+               PERIOD_4,
+               PERIOD_8,
+               PERIOD_MEETING,
+               PERIOD_LUNCH,
+               PERIOD_6,
+               PERIOD_2];
+    [self loadBellName:BELL_PILOT_SCHEDULE_1_4862
+             cycleName:CYCLE_3
                periods:periods
                  times:times intoManagedObjectContext:context];
 }
