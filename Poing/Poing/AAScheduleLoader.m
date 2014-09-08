@@ -170,6 +170,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadMovingUpChapelPeriodDataIntoContext:context];
     [self loadPilotSchedule1DataIntoContext:context];
     [self loadPilotSchedule2DataIntoContext:context];
+    [self loadPilotSchedule3DataIntoContext:context];
  
     // These must go last. They correct errors in the raw schedule.
     [self overrides:context];
@@ -1020,6 +1021,106 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_3,
                 PERIOD_4];
     [self loadBellName:[BELL_PILOT_SCHEDULE_2 stringByAppendingString:@"C"]
+             cycleName:CYCLE_PILOT
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+}
+
++ (void) loadPilotSchedule3DataIntoContext: (NSManagedObjectContext *)context
+{
+    NSArray *periods = nil;
+    NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
+                       @{@"start": @"07:50", @"end": @"08:10"},
+                       @{@"start": @"08:15", @"end": @"09:10"},
+                       @{@"start": @"09:15", @"end": @"10:10"},
+                       @{@"start": @"10:15", @"end": @"11:10"},
+                       @{@"start": @"11:15", @"end": @"12:10"},
+                       @{@"start": @"12:15", @"end": @"13:00"},
+                       @{@"start": @"13:05", @"end": @"14:00"},
+                       @{@"start": @"14:05", @"end": @"15:00"}];
+    // SCHEDULE A
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CHAPEL,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_3,
+                PERIOD_4
+                PERIOD_LUNCH,
+                PERIOD_5,
+                PERIOD_6];
+    [self loadBellName:[BELL_PILOT_SCHEDULE_3 stringByAppendingString:@"A"]
+             cycleName:CYCLE_PILOT
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // SCHEDULE B
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CHAPEL,
+                PERIOD_7,
+                PERIOD_8,
+                PERIOD_1,
+                PERIOD_2
+                PERIOD_LUNCH,
+                PERIOD_3,
+                PERIOD_4];
+    [self loadBellName:[BELL_PILOT_SCHEDULE_3 stringByAppendingString:@"B"]
+             cycleName:CYCLE_PILOT
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // SCHEDULE C
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CHAPEL,
+                PERIOD_5,
+                PERIOD_6,
+                PERIOD_7,
+                PERIOD_8
+                PERIOD_LUNCH,
+                PERIOD_1,
+                PERIOD_2];
+    [self loadBellName:[BELL_PILOT_SCHEDULE_3 stringByAppendingString:@"C"]
+             cycleName:CYCLE_PILOT
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // SCHEDULE D
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CHAPEL,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_5,
+                PERIOD_6
+                PERIOD_LUNCH,
+                PERIOD_7,
+                PERIOD_8];
+    [self loadBellName:[BELL_PILOT_SCHEDULE_3 stringByAppendingString:@"D"]
+             cycleName:CYCLE_PILOT
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    //SCHEDULE E
+    times = @[@{@"start": @"07:40", @"end": @"07:45"},
+              @{@"start": @"07:50", @"end": @"08:35"},
+              @{@"start": @"08:40", @"end": @"09:25"},
+              @{@"start": @"09:30", @"end": @"10:15"},
+              @{@"start": @"10:20", @"end": @"11:05"},
+              @{@"start": @"11:10", @"end": @"11:55"},
+              @{@"start": @"11:55", @"end": @"12:30"},
+              @{@"start": @"12:35", @"end": @"13:20"},
+              @{@"start": @"13:25", @"end": @"14:10"},
+              @{@"start": @"14:15", @"end": @"15:00"}];
+    
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_5,
+                PERIOD_LUNCH,
+                PERIOD_6,
+                PERIOD_7,
+                PERIOD_8];
+    [self loadBellName:[BELL_PILOT_SCHEDULE_3 stringByAppendingString:@"E"]
              cycleName:CYCLE_PILOT
                periods:periods
                  times:times intoManagedObjectContext:context];
