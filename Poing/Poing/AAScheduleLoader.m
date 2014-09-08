@@ -34,10 +34,13 @@
 #define BELL_CHAPEL_MOVING_UP @"Moving Up Chapel Schedule"
 #define BELL_PILOT_SCHEDULE_1_4862 @"Pilot 1 Extended 3 Schedule (3,7,5,1)"
 #define BELL_PILOT_SCHEDULE_1_3751 @"Pilot 1 Extended 3 Schedule (4,8,6,2)"
+#define BELL_PILOT_SCHEDULE_2 @"Pilot 2 Schedule "
+#define BELL_PILOT_SCHEDULE_3 @"Pilot 3 Schedule "
 
 #define CYCLE_1 @"1"
 #define CYCLE_3 @"3"
 #define CYCLE_7 @"7"
+#define CYCLE_PILOT @"Pilot"
 
 #define PERIOD_HOME_ROOM @"Home Room"
 #define PERIOD_1 @"1"
@@ -54,6 +57,7 @@
 #define PERIOD_MEETING  @"Meeting"
 #define PERIOD_CONVOCATION @"Convocation"
 #define PERIOD_CEREMONY @"Ceremony"
+#define PERIOD_BREAK @"Break"
 
 @implementation AAScheduleLoader
 
