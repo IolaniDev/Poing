@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		21687FF6187DFB9400E08886 /* Casey's Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 21687FF5187DFB9400E08886 /* Casey's Picture.png */; };
 		21687FFA187E00CA00E08886 /* Casey's Picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21687FF9187E00CA00E08886 /* Casey's Picture@2x.png */; };
+		45436BE619BEDD0800F9774A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BE519BEDD0800F9774A /* Bolts.framework */; };
+		45436BE819BEDD1400F9774A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BE719BEDD1400F9774A /* Parse.framework */; };
+		45436BEA19BEDEA200F9774A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BE919BEDEA200F9774A /* AudioToolbox.framework */; };
+		45436BEC19BEDEAA00F9774A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BEB19BEDEAA00F9774A /* CFNetwork.framework */; };
+		45436BEE19BEDEBA00F9774A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BED19BEDEBA00F9774A /* CoreLocation.framework */; };
+		45436BF019BEDED100F9774A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BEF19BEDED100F9774A /* MobileCoreServices.framework */; };
+		45436BF219BEDEE100F9774A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF119BEDEE100F9774A /* Security.framework */; };
+		45436BF419BEDEE900F9774A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF319BEDEE900F9774A /* StoreKit.framework */; };
+		45436BF619BEDEFB00F9774A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */; };
 		45D05B53198E326300063674 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D05B4D198E326300063674 /* libTestFlight.a */; };
 		45D05B54198E326300063674 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 45D05B4E198E326300063674 /* README.md */; };
 		45D05B55198E326300063674 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 45D05B4F198E326300063674 /* release_notes.md */; };
@@ -84,6 +93,15 @@
 /* Begin PBXFileReference section */
 		21687FF5187DFB9400E08886 /* Casey's Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Casey's Picture.png"; sourceTree = "<group>"; };
 		21687FF9187E00CA00E08886 /* Casey's Picture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Casey's Picture@2x.png"; sourceTree = "<group>"; };
+		45436BE519BEDD0800F9774A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Poing/ParseSDK/Bolts.framework; sourceTree = "<group>"; };
+		45436BE719BEDD1400F9774A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Poing/ParseSDK/Parse.framework; sourceTree = "<group>"; };
+		45436BE919BEDEA200F9774A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		45436BEB19BEDEAA00F9774A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		45436BED19BEDEBA00F9774A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		45436BEF19BEDED100F9774A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		45436BF119BEDEE100F9774A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		45436BF319BEDEE900F9774A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		45D05B4D198E326300063674 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		45D05B4E198E326300063674 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		45D05B4F198E326300063674 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -196,13 +214,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45D05B57198E331800063674 /* libz.dylib in Frameworks */,
+				45436BF619BEDEFB00F9774A /* SystemConfiguration.framework in Frameworks */,
+				45436BF419BEDEE900F9774A /* StoreKit.framework in Frameworks */,
+				45436BF219BEDEE100F9774A /* Security.framework in Frameworks */,
 				CFB56D4A1866E197007ABFB1 /* QuartzCore.framework in Frameworks */,
-				CF85FCF4185D501400C70BE1 /* CoreData.framework in Frameworks */,
+				45436BF019BEDED100F9774A /* MobileCoreServices.framework in Frameworks */,
+				45D05B57198E331800063674 /* libz.dylib in Frameworks */,
+				45436BEE19BEDEBA00F9774A /* CoreLocation.framework in Frameworks */,
 				CF108BDF185C0A01001E6706 /* CoreGraphics.framework in Frameworks */,
+				45436BEC19BEDEAA00F9774A /* CFNetwork.framework in Frameworks */,
+				45436BEA19BEDEA200F9774A /* AudioToolbox.framework in Frameworks */,
+				45436BE819BEDD1400F9774A /* Parse.framework in Frameworks */,
+				CF85FCF4185D501400C70BE1 /* CoreData.framework in Frameworks */,
 				45D05B53198E326300063674 /* libTestFlight.a in Frameworks */,
 				CF108BE1185C0A01001E6706 /* UIKit.framework in Frameworks */,
 				CF108BDD185C0A01001E6706 /* Foundation.framework in Frameworks */,
+				45436BE619BEDD0800F9774A /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +308,15 @@
 		CF108BDB185C0A01001E6706 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */,
+				45436BF319BEDEE900F9774A /* StoreKit.framework */,
+				45436BF119BEDEE100F9774A /* Security.framework */,
+				45436BEF19BEDED100F9774A /* MobileCoreServices.framework */,
+				45436BED19BEDEBA00F9774A /* CoreLocation.framework */,
+				45436BEB19BEDEAA00F9774A /* CFNetwork.framework */,
+				45436BE919BEDEA200F9774A /* AudioToolbox.framework */,
+				45436BE719BEDD1400F9774A /* Parse.framework */,
+				45436BE519BEDD0800F9774A /* Bolts.framework */,
 				45D05B56198E331800063674 /* libz.dylib */,
 				CFB56D491866E197007ABFB1 /* QuartzCore.framework */,
 				CF85FCF3185D501400C70BE1 /* CoreData.framework */,
@@ -745,6 +781,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Poing/ParseSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Poing/Poing-Prefix.pch";
 				INFOPLIST_FILE = "Poing/Poing-Info.plist";
@@ -766,6 +806,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Iolani School";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Iolani School";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Poing/ParseSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Poing/Poing-Prefix.pch";
 				INFOPLIST_FILE = "Poing/Poing-Info.plist";

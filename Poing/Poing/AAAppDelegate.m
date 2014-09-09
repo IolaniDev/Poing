@@ -11,6 +11,7 @@
 #import "AASchoolDayCDTVC.h"
 #import "AATeacherLoader.h"
 #import "TestFlight.h"
+#import <Parse/Parse.h>
 
 @implementation AAAppDelegate
 
@@ -92,10 +93,29 @@
     // Initialize TestFlight API
     [TestFlight takeOff:@"e3f67dcb-b0e1-4e81-9b7a-310076574391"];
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"BFr7sOFOHuNT4jZxebO8o6xOoCZnEqkZwp79P2Ns"
+                  clientKey:@"fMfKdKCIrEhwNmD1pIo6wRihYdXNg4em3BptnpfG"];
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
+     UIRemoteNotificationTypeAlert|
+     UIRemoteNotificationTypeSound];
     [self setupManagedDocument];
     return YES;
 }
-							
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
