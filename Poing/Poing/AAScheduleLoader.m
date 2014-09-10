@@ -32,8 +32,8 @@
 #define BELL_SPECIAL_MAY_DAY @"Special May Day Schedule"
 #define BELL_VARIETY_ATHLETIC_ASSEMBLY @"Variety/Athletic Assembly Schedule"
 #define BELL_CHAPEL_MOVING_UP @"Moving Up Chapel Schedule"
-#define BELL_PILOT_SCHEDULE_1_4862 @"Pilot 1 Extended 3 Schedule (3,7,5,1)"
-#define BELL_PILOT_SCHEDULE_1_3751 @"Pilot 1 Extended 3 Schedule (4,8,6,2)"
+#define BELL_PILOT_SCHEDULE_1_4862 @"Pilot 1 Extended 3 Schedule (4,8,6,2)"
+#define BELL_PILOT_SCHEDULE_1_3751 @"Pilot 1 Extended 3 Schedule (3,7,5,1)"
 #define BELL_PILOT_SCHEDULE_2 @"Pilot 2 Schedule "
 #define BELL_PILOT_SCHEDULE_3 @"Pilot 3 Schedule "
 
