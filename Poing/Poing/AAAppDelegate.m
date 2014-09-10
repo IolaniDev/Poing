@@ -92,12 +92,16 @@
 {
     // Initialize TestFlight API
     [TestFlight takeOff:@"e3f67dcb-b0e1-4e81-9b7a-310076574391"];
-    // Override point for customization after application launch.
+    // Initialize Parse SDK
     [Parse setApplicationId:@"BFr7sOFOHuNT4jZxebO8o6xOoCZnEqkZwp79P2Ns"
                   clientKey:@"fMfKdKCIrEhwNmD1pIo6wRihYdXNg4em3BptnpfG"];
+    // Track analytics in Parse
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    // Register for push notifications with Parse
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
      UIRemoteNotificationTypeAlert|
      UIRemoteNotificationTypeSound];
+    // Override point for customization after application launch.
     [self setupManagedDocument];
     return YES;
 }
@@ -105,15 +109,25 @@
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    // Store the deviceToken in the current installation and save it to Parse.
+    // Store the deviceToken in the current Installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[@"global"];
     [currentInstallation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    if (error.code == 3010) {
+        NSLog(@"Push notifications are not supported in the iOS Simulator.");
+    } else {
+        // show some alert or otherwise handle the failure to register.
+        NSLog(@"application:didFailToRegisterForRemoteNotificationsWithError: %@", error);
+	}
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
