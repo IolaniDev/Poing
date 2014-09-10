@@ -65,12 +65,11 @@
 {
     BOOL hasFirstDay = (BOOL)[SchoolDay schoolDayForString:@"2014-08-25"
                                            inContext:context];
-    BOOL hasUpdatedWk3 = (BOOL)[SchoolDay schoolDayForString:@"2014-09-12" inContext:context];
-//    SchoolDay *day = [SchoolDay schoolDayForString:@"2014-04-17"
-//                                         inContext:context];
-//    BOOL hasLatestOverride = (BOOL)[day.bellCycle.bell.name isEqualToString:BELL_CHAPEL];
+    SchoolDay *day = [SchoolDay schoolDayForString:@"2014-09-10"
+                                         inContext:context];
+    BOOL hasLatestOverride = (BOOL)[day.bellCycle.bell.name isEqualToString:BELL_PILOT_SCHEDULE_1_4862];
     
-    return !hasFirstDay || !hasUpdatedWk3  /*|| !hasLatestOverride */;
+    return !hasFirstDay || !hasLatestOverride;
 }
 
 + (void)loadScheduleDataWithContext:(NSManagedObjectContext *)context
@@ -201,6 +200,18 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
 
 + (void)overrides:(NSManagedObjectContext *)context
 {
+    // Fix Pilot 1 Extended Schedule for 2014-09-10 and 2014-09-11
+        [self overDayString:@"2014-09-10"
+                   bellName:BELL_PILOT_SCHEDULE_1_4862
+                  cycleName:CYCLE_3
+                    context:context];
+    
+        [self overDayString:@"2014-09-11"
+                   bellName:BELL_PILOT_SCHEDULE_1_3751
+                  cycleName:CYCLE_3
+                    context:context];
+    
+    
     // Change bell-cycle for Moving Up Chapel day from
     // regular "Chapel" to "Chapel Moving Up".
 //    [self overDayString:@"2014-05-22"
