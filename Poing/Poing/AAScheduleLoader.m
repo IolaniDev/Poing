@@ -1031,7 +1031,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_MEETING,
                 PERIOD_3,
                 PERIOD_4];
-    [self loadBellName:[BELL_PILOT_SCHEDULE_2 stringByAppendingString:@"C"]
+    [self loadBellName:[BELL_PILOT_SCHEDULE_2 stringByAppendingString:@"F"]
              cycleName:CYCLE_PILOT
                periods:periods
                  times:times intoManagedObjectContext:context];
