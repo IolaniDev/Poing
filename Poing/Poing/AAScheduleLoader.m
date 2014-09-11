@@ -1055,7 +1055,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_1,
                 PERIOD_2,
                 PERIOD_3,
-                PERIOD_4
+                PERIOD_4,
                 PERIOD_LUNCH,
                 PERIOD_5,
                 PERIOD_6];
@@ -1070,7 +1070,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_7,
                 PERIOD_8,
                 PERIOD_1,
-                PERIOD_2
+                PERIOD_2,
                 PERIOD_LUNCH,
                 PERIOD_3,
                 PERIOD_4];
@@ -1085,7 +1085,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_5,
                 PERIOD_6,
                 PERIOD_7,
-                PERIOD_8
+                PERIOD_8,
                 PERIOD_LUNCH,
                 PERIOD_1,
                 PERIOD_2];
@@ -1100,7 +1100,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_3,
                 PERIOD_4,
                 PERIOD_5,
-                PERIOD_6
+                PERIOD_6,
                 PERIOD_LUNCH,
                 PERIOD_7,
                 PERIOD_8];
