@@ -65,9 +65,9 @@
 {
     BOOL hasFirstDay = (BOOL)[SchoolDay schoolDayForString:@"2014-08-25"
                                            inContext:context];
-    SchoolDay *day = [SchoolDay schoolDayForString:@"2014-09-10"
+    SchoolDay *day = [SchoolDay schoolDayForString:@"2015-03-19"
                                          inContext:context];
-    BOOL hasLatestOverride = (BOOL)[day.bellCycle.bell.name isEqualToString:BELL_PILOT_SCHEDULE_1_4862];
+    BOOL hasLatestOverride = (BOOL)[day.bellCycle.bell.name isEqualToString:BELL_CHAPEL];
     
     return !hasFirstDay || !hasLatestOverride;
 }
