@@ -214,17 +214,22 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                     context:context];
     
     PFQuery *overrideQuery = [PFQuery queryWithClassName:@"Override"];
+    // load query from cache first (if available), then load from network
+    overrideQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    // load most recent overrides first
     [overrideQuery addAscendingOrder:@"updatedAt"];
-    NSArray *overrides = [overrideQuery findObjects];
-    
-    for (PFObject *schedule in overrides) {
-        [self overDayString:[schedule objectForKey:@"dayString"]
-                   bellName:[schedule objectForKey:@"bellName"]
-                  cycleName:[schedule objectForKey:@"cycleName"]
-                    context:context];
-    }
-
-    NSLog([overrides description]);
+    [overrideQuery findObjectsInBackgroundWithBlock:^(NSArray *overrides, NSError *error) {
+        if(!error)  {
+            for(PFObject *schedule in overrides)   {
+                [self overDayString:[schedule objectForKey:@"dayString"]
+                           bellName:[schedule objectForKey:@"bellName"]
+                          cycleName:[schedule objectForKey:@"cycleName"]
+                            context:context];
+            }
+        } else  {
+            NSLog(@"Unable to retrieve overrides from both network and cache.");
+        }
+    }];
     
     // Change bell-cycle for Moving Up Chapel day from
     // regular "Chapel" to "Chapel Moving Up".
