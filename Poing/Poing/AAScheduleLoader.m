@@ -15,6 +15,8 @@
 #import "BellCyclePeriod+Create.h"
 #import "SchoolDay+Info.h"
 #import <CoreData/CoreData.h>
+#import <Parse/PFCloud.h>
+#import <Parse/PFQuery.h>
 
 #define BELL_ASSEMBLY_1 @"Assembly 1 Schedule"
 #define BELL_ASSEMBLY_2 @"Assembly 2 Schedule"
@@ -211,6 +213,18 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                   cycleName:CYCLE_3
                     context:context];
     
+    PFQuery *overrideQuery = [PFQuery queryWithClassName:@"Override"];
+    [overrideQuery addAscendingOrder:@"updatedAt"];
+    NSArray *overrides = [overrideQuery findObjects];
+    
+    for (PFObject *schedule in overrides) {
+        [self overDayString:[schedule objectForKey:@"dayString"]
+                   bellName:[schedule objectForKey:@"bellName"]
+                  cycleName:[schedule objectForKey:@"cycleName"]
+                    context:context];
+    }
+
+    NSLog([overrides description]);
     
     // Change bell-cycle for Moving Up Chapel day from
     // regular "Chapel" to "Chapel Moving Up".
