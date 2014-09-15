@@ -29,7 +29,9 @@
              @{@"name": @"Cara",
                @"bio": @"Cara grew up wanting to be a scientist or inventor thanks to watching a lot of Mr. Wizard, Inspector Gadget, and Nova. She enjoys design and design research as it contains all the joys of hypothesis testing, wild ideas, creative problem solving, and building stuff within a social context. She wishes she had more time to do just about anything and everything. She finds time to play with family whenever possible and likely puts her daughter to bed far later than she should. "},
              @{@"name": @"Kyle",
-               @"bio": @"Kyle enjoys programming. He also enjoys building software products and electronic things in general. He runs a software design studio with his wife, Cara, and spends a lot of time reading and drawing with his daughter. He enjoys watching movies and playing video games, but never has a chance to do either. Mostly, he passes his time grinding, brewing, and drinking coffee. He reads a lot of non-fiction, and loves unusual humor. He wishes he was in Paris."}
+               @"bio": @"Kyle enjoys programming. He also enjoys building software products and electronic things in general. He runs a software design studio with his wife, Cara, and spends a lot of time reading and drawing with his daughter. He enjoys watching movies and playing video games, but never has a chance to do either. Mostly, he passes his time grinding, brewing, and drinking coffee. He reads a lot of non-fiction, and loves unusual humor. He wishes he was in Paris."},
+             @{@"name": @"Korry",
+               @"bio": @"Korry is a member of the class of 2015.  He enjoys coding, tinkering, drinking tea and coffee, and curling up under a tree with a good book.  He lives in the #SCIL (not really) and enjoys the pleasant aroma of wood burning in the laser cutter.  It is difficult to find an actual photograph of him, and he is often represented (in graphical format) by Blooregard Q. Kazoo."}
              ];
 }
 
