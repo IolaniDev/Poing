@@ -76,16 +76,16 @@
 
 + (void)loadScheduleDataWithContext:(NSManagedObjectContext *)context
 {
-    if (![self scheduleLoadRequired:context]) return;
-    
-    // Parse schedule:
-    [self loadScheduleJSONIntoContext:context];
-    
-    // Test data load:
-    [self verifyBellsCyclesPeriodsWithContext:context];
-    
-    // Load period times:
-    [self loadBellCyclePeriodDataIntoContext:context];
+    if ([self scheduleLoadRequired:context])    {
+        // Parse schedule:
+        [self loadScheduleJSONIntoContext:context];
+        // Test data load:
+        [self verifyBellsCyclesPeriodsWithContext:context];
+        // Load period times:
+        [self loadBellCyclePeriodDataIntoContext:context];
+    } else  {
+        [self overrides:context];
+    }
 }
 
 + (void)verifyBellsCyclesPeriodsWithContext:(NSManagedObjectContext *)context
