@@ -18,6 +18,8 @@
 		45436BF219BEDEE100F9774A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF119BEDEE100F9774A /* Security.framework */; };
 		45436BF419BEDEE900F9774A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF319BEDEE900F9774A /* StoreKit.framework */; };
 		45436BF619BEDEFB00F9774A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */; };
+		456FD86B19CB6EBC008AFDBC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456FD86919CB6EBC008AFDBC /* Bolts.framework */; };
+		456FD86C19CB6EBC008AFDBC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456FD86A19CB6EBC008AFDBC /* Parse.framework */; };
 		45D05B53198E326300063674 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D05B4D198E326300063674 /* libTestFlight.a */; };
 		45D05B54198E326300063674 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 45D05B4E198E326300063674 /* README.md */; };
 		45D05B55198E326300063674 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 45D05B4F198E326300063674 /* release_notes.md */; };
@@ -102,6 +104,8 @@
 		45436BF119BEDEE100F9774A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		45436BF319BEDEE900F9774A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		456FD86919CB6EBC008AFDBC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		456FD86A19CB6EBC008AFDBC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		45D05B4D198E326300063674 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		45D05B4E198E326300063674 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		45D05B4F198E326300063674 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -224,8 +228,10 @@
 				CF108BDF185C0A01001E6706 /* CoreGraphics.framework in Frameworks */,
 				45436BEC19BEDEAA00F9774A /* CFNetwork.framework in Frameworks */,
 				45436BEA19BEDEA200F9774A /* AudioToolbox.framework in Frameworks */,
+				456FD86C19CB6EBC008AFDBC /* Parse.framework in Frameworks */,
 				45436BE819BEDD1400F9774A /* Parse.framework in Frameworks */,
 				CF85FCF4185D501400C70BE1 /* CoreData.framework in Frameworks */,
+				456FD86B19CB6EBC008AFDBC /* Bolts.framework in Frameworks */,
 				45D05B53198E326300063674 /* libTestFlight.a in Frameworks */,
 				CF108BE1185C0A01001E6706 /* UIKit.framework in Frameworks */,
 				CF108BDD185C0A01001E6706 /* Foundation.framework in Frameworks */,
@@ -308,6 +314,8 @@
 		CF108BDB185C0A01001E6706 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				456FD86919CB6EBC008AFDBC /* Bolts.framework */,
+				456FD86A19CB6EBC008AFDBC /* Parse.framework */,
 				45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */,
 				45436BF319BEDEE900F9774A /* StoreKit.framework */,
 				45436BF119BEDEE100F9774A /* Security.framework */,
@@ -784,6 +792,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Poing/ParseSDK",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Poing/Poing-Prefix.pch";
@@ -809,6 +818,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Poing/ParseSDK",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Poing/Poing-Prefix.pch";
