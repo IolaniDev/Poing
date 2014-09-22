@@ -836,7 +836,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     NSString *bellType = BELL_SPECIAL_MAY_DAY;
     NSArray *periods = nil;
     
-    // Fair Day - CYCLE 7
+    // May Day - CYCLE 7
     NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
                        @{@"start": @"07:50", @"end": @"08:26"},
                        @{@"start": @"08:31", @"end": @"09:07"},
