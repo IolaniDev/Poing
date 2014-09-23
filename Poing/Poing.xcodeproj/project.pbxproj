@@ -802,7 +802,7 @@
 					"$(PROJECT_DIR)/Poing/TestFlightSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5afbd1f3-c310-4ea4-80d3-77ac20fcd126";
+				PROVISIONING_PROFILE = "47307ecd-f043-48db-baa1-511ffc7578f0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -828,7 +828,7 @@
 					"$(PROJECT_DIR)/Poing/TestFlightSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5afbd1f3-c310-4ea4-80d3-77ac20fcd126";
+				PROVISIONING_PROFILE = "47307ecd-f043-48db-baa1-511ffc7578f0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
