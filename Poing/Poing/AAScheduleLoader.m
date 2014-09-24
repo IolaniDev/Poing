@@ -67,11 +67,11 @@
 {
     BOOL hasFirstDay = (BOOL)[SchoolDay schoolDayForString:@"2014-08-25"
                                            inContext:context];
-    SchoolDay *day = [SchoolDay schoolDayForString:@"2015-03-19"
+    SchoolDay *day = [SchoolDay schoolDayForString:@"2015-05-29"
                                          inContext:context];
-    BOOL hasLatestOverride = (BOOL)[day.bellCycle.bell.name isEqualToString:BELL_CHAPEL];
+    BOOL hasLastDay = (BOOL)[day.bellCycle.bell.name isEqualToString:BELL_BASIC];
     
-    return !hasFirstDay || !hasLatestOverride;
+    return !hasFirstDay || !hasLastDay;
 }
 
 + (void)loadScheduleDataWithContext:(NSManagedObjectContext *)context
