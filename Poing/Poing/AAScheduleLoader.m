@@ -806,7 +806,6 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     NSString *bellType = BELL_SPECIAL_FAIR_DAY;
     NSArray *periods = nil;
     
-    // Fair Day - CYCLE 1
     NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
                        @{@"start": @"07:50", @"end": @"08:10"},
                        @{@"start": @"08:15", @"end": @"08:35"},
@@ -816,6 +815,8 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                        @{@"start": @"10:00", @"end": @"10:20"},
                        @{@"start": @"10:25", @"end": @"10:45"},
                        @{@"start": @"10:50", @"end": @"11:10"}];
+    
+    // Fair Day - CYCLE 1
     periods = @[PERIOD_HOME_ROOM,
                 PERIOD_1,
                 PERIOD_2,
@@ -829,6 +830,37 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
              cycleName:CYCLE_1
                periods:periods
                  times:times intoManagedObjectContext:context];
+    
+    // Fair Day - CYCLE 7
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_7,
+                PERIOD_8,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_5,
+                PERIOD_6,
+                PERIOD_3,
+                PERIOD_4];
+    [self loadBellName:bellType
+             cycleName:CYCLE_7
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // Fair Day - CYCLE 3
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_7,
+                PERIOD_8,
+                PERIOD_5,
+                PERIOD_6,
+                PERIOD_1,
+                PERIOD_2];
+    [self loadBellName:bellType
+             cycleName:CYCLE_3
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
 }
 
 + (void)loadMayDayPeriodDataIntoContext:(NSManagedObjectContext *)context
@@ -836,7 +868,6 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     NSString *bellType = BELL_SPECIAL_MAY_DAY;
     NSArray *periods = nil;
     
-    // May Day - CYCLE 7
     NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
                        @{@"start": @"07:50", @"end": @"08:26"},
                        @{@"start": @"08:31", @"end": @"09:07"},
@@ -848,6 +879,25 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                        @{@"start": @"13:02", @"end": @"13:38"},
                        @{@"start": @"13:43", @"end": @"14:19"},
                        @{@"start": @"14:24", @"end": @"15:00"}];
+    
+    // May Day - CYCLE 1
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_ASSEMBLY,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_5,
+                PERIOD_LUNCH,
+                PERIOD_6,
+                PERIOD_7,
+                PERIOD_8];
+    [self loadBellName:bellType
+             cycleName:CYCLE_1
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // May Day - CYCLE 7
     periods = @[PERIOD_HOME_ROOM,
                 PERIOD_7,
                 PERIOD_8,
@@ -863,14 +913,29 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
              cycleName:CYCLE_7
                periods:periods
                  times:times intoManagedObjectContext:context];
+    
+    // May Day - CYCLE 3
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_ASSEMBLY,
+                PERIOD_7,
+                PERIOD_8,
+                PERIOD_5,
+                PERIOD_LUNCH,
+                PERIOD_6,
+                PERIOD_1,
+                PERIOD_2];
+    [self loadBellName:bellType
+             cycleName:CYCLE_3
+               periods:periods
+                 times:times intoManagedObjectContext:context];
 }
 
 + (void)loadMovingUpChapelPeriodDataIntoContext:(NSManagedObjectContext *)context
 {
     NSString *bellType = BELL_CHAPEL_MOVING_UP;
     NSArray *periods = nil;
-    
-    // Moving Up Chapel - CYCLE 7
     NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
                        @{@"start": @"07:50", @"end": @"08:20"},
                        @{@"start": @"08:25", @"end": @"09:05"},
@@ -882,6 +947,25 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                        @{@"start": @"12:50", @"end": @"13:30"},
                        @{@"start": @"13:35", @"end": @"14:15"},
                        @{@"start": @"14:20", @"end": @"15:00"}];
+    
+    // Moving Up Chapel - CYCLE 1
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CEREMONY,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_5,
+                PERIOD_LUNCH,
+                PERIOD_6,
+                PERIOD_7,
+                PERIOD_8];
+    [self loadBellName:bellType
+             cycleName:CYCLE_1
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // Moving Up Chapel - CYCLE 7
     periods = @[PERIOD_HOME_ROOM,
                 PERIOD_CEREMONY,
                 PERIOD_7,
@@ -895,6 +979,23 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_4];
     [self loadBellName:bellType
              cycleName:CYCLE_7
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // Moving Up Chapel - CYCLE 3
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CEREMONY,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_7,
+                PERIOD_8,
+                PERIOD_5,
+                PERIOD_LUNCH,
+                PERIOD_6,
+                PERIOD_1,
+                PERIOD_2];
+    [self loadBellName:bellType
+             cycleName:CYCLE_3
                periods:periods
                  times:times intoManagedObjectContext:context];
 }
