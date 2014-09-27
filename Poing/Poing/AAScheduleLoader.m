@@ -204,6 +204,9 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
 {
     // fetch new schedules from Parse
     PFQuery *newScheduleQuery = [PFQuery queryWithClassName:@"NewSchedule"];
+    // set cache policy
+    newScheduleQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    [newScheduleQuery addAscendingOrder:@"updatedAt"];
     // load any new schedules from Parse into context
     [newScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *newSchedules, NSError *error) {
         if(!error)  {
