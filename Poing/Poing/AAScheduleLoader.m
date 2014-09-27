@@ -84,6 +84,7 @@
         // Load period times:
         [self loadBellCyclePeriodDataIntoContext:context];
     } else  {
+        [self fetchNewSchedules: context];
         [self overrides:context];
     }
 }
@@ -197,6 +198,11 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
         SchoolDay *schoolDay = [matches lastObject];
         schoolDay.bellCycle = bellCycle;
     }
+}
+
++ (void)fetchNewSchedules:(NSManagedObjectContext *)context
+{
+    // fetch new schedules from Parse
 }
 
 
