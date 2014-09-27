@@ -203,6 +203,18 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
 + (void)fetchNewSchedules:(NSManagedObjectContext *)context
 {
     // fetch new schedules from Parse
+    PFQuery *newScheduleQuery = [PFQuery queryWithClassName:@"NewSchedule"];
+    // load any new schedules from Parse into context
+    [newScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *newSchedules, NSError *error) {
+        if(!error)  {
+            for(PFObject *schedule in newSchedules)    {
+                [SchoolDay schoolDayWithDayString:[schedule objectForKey:@"day"]
+                                         bellName:[schedule objectForKey:@"bellName"]
+                                        cycleName:[NSString stringWithFormat:@"%@", [schedule objectForKey:@"cycleName"]]
+                           inManagedObjectContext:context];
+            }
+        }
+    }];
 }
 
 
