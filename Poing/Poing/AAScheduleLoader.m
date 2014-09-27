@@ -230,7 +230,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
             NSLog(@"Unable to retrieve overrides from both network and cache.");
         }
     }];
-    
+    // Leaving overrides in as example code
     // Change bell-cycle for Moving Up Chapel day from
     // regular "Chapel" to "Chapel Moving Up".
 //    [self overDayString:@"2014-05-22"
@@ -1229,7 +1229,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                periods:periods
                  times:times intoManagedObjectContext:context];
     
-    //SCHEDULE E
+    // SCHEDULE E
     times = @[@{@"start": @"07:40", @"end": @"07:45"},
               @{@"start": @"07:50", @"end": @"08:35"},
               @{@"start": @"08:40", @"end": @"09:25"},
