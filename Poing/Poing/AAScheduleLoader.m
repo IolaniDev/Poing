@@ -164,6 +164,18 @@
                times:(NSArray *)times
 intoManagedObjectContext:(NSManagedObjectContext *)context
 {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"BellCyclePeriod"];
+    NSPredicate *bellNamePred = [NSPredicate predicateWithFormat:@"bellCycle.bell.name = %@", bellName];
+    NSPredicate *cycleNamePred = [NSPredicate predicateWithFormat:@"bellCycle.cycle.name = %@", cycleName];
+    request.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[bellNamePred, cycleNamePred]];
+    NSError *error;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    if([matches count])  {
+        for(BellCyclePeriod *period in matches) {
+            [context deleteObject:period];
+        }
+        [context save:&error];
+    }
     for (int i=0; i<[periods count]; i++) {
         [BellCyclePeriod bellCyclePeriodWithBellName:bellName
                                            cycleName:cycleName
@@ -173,7 +185,6 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                               inManagedObjectContext:context];
     }
 }
-
 
 #pragma mark - Load Bell Cycle Periods
 
