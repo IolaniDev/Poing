@@ -146,10 +146,11 @@
     [newScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *newSchedules, NSError *error) {
         if(!error)  {
             for(PFObject *schedule in newSchedules)    {
-                [SchoolDay schoolDayWithDayString:[schedule objectForKey:@"day"]
-                                         bellName:[schedule objectForKey:@"bellName"]
-                                        cycleName:[NSString stringWithFormat:@"%@", [schedule objectForKey:@"cycleName"]]
-                           inManagedObjectContext:context];
+                [self loadBellName:[schedule objectForKey:@"bellName"]
+                         cycleName:[schedule objectForKey:@"cycleName"]
+                           periods:[schedule objectForKey:@"periods"]
+                             times:[schedule objectForKey:@"times"]
+          intoManagedObjectContext:context];
             }
         }
     }];
