@@ -85,7 +85,6 @@
         [self loadBellCyclePeriodDataIntoContext:context];
     } else  {
         [self fetchNewSchedules: context];
-        [self overrides:context];
     }
 }
 
@@ -154,6 +153,7 @@
             }
         }
     }];
+    [self overrides:context];
 }
 
 #pragma mark - Load Bell Cycle Period Data
@@ -195,7 +195,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadPilotSchedule3DataIntoContext:context];
  
     // These must go last. They correct errors in the raw schedule.
-    [self overrides:context];
+    [self fetchNewSchedules:context];
 }
 
 + (void)overDayString:(NSString *)dayString
