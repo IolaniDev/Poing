@@ -135,6 +135,25 @@
     }
 }
 
++ (void)fetchNewSchedules:(NSManagedObjectContext *)context
+{
+    // fetch new schedules from Parse
+    PFQuery *newScheduleQuery = [PFQuery queryWithClassName:@"NewSchedule"];
+    // set cache policy
+    newScheduleQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    [newScheduleQuery addAscendingOrder:@"updatedAt"];
+    // load any new schedules from Parse into context
+    [newScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *newSchedules, NSError *error) {
+        if(!error)  {
+            for(PFObject *schedule in newSchedules)    {
+                [SchoolDay schoolDayWithDayString:[schedule objectForKey:@"day"]
+                                         bellName:[schedule objectForKey:@"bellName"]
+                                        cycleName:[NSString stringWithFormat:@"%@", [schedule objectForKey:@"cycleName"]]
+                           inManagedObjectContext:context];
+            }
+        }
+    }];
+}
 
 #pragma mark - Load Bell Cycle Period Data
 
@@ -199,27 +218,6 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
         schoolDay.bellCycle = bellCycle;
     }
 }
-
-+ (void)fetchNewSchedules:(NSManagedObjectContext *)context
-{
-    // fetch new schedules from Parse
-    PFQuery *newScheduleQuery = [PFQuery queryWithClassName:@"NewSchedule"];
-    // set cache policy
-    newScheduleQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    [newScheduleQuery addAscendingOrder:@"updatedAt"];
-    // load any new schedules from Parse into context
-    [newScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *newSchedules, NSError *error) {
-        if(!error)  {
-            for(PFObject *schedule in newSchedules)    {
-                [SchoolDay schoolDayWithDayString:[schedule objectForKey:@"day"]
-                                         bellName:[schedule objectForKey:@"bellName"]
-                                        cycleName:[NSString stringWithFormat:@"%@", [schedule objectForKey:@"cycleName"]]
-                           inManagedObjectContext:context];
-            }
-        }
-    }];
-}
-
 
 + (void)overrides:(NSManagedObjectContext *)context
 {
