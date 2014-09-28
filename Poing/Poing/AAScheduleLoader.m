@@ -245,6 +245,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                           cycleName:[schedule objectForKey:@"cycleName"]
                             context:context];
             }
+            NSLog(@"Retrieved and loaded overrides.");
         } else  {
             NSLog(@"Unable to retrieve overrides from both network and cache.");
         }
