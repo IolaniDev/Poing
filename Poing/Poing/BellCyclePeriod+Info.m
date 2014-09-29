@@ -14,6 +14,18 @@
 
 @implementation BellCyclePeriod (Info)
 
++ (NSArray *)bellCyclePeriodsInSchedule:(NSString *)bellName
+                      withCycle:(NSString *)cycleName
+               inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"BellCyclePeriod"];
+    NSPredicate *bellNamePred = [NSPredicate predicateWithFormat:@"bellCycle.bell.name = %@", bellName];
+    NSPredicate *cycleNamePred = [NSPredicate predicateWithFormat:@"bellCycle.cycle.name = %@", cycleName];
+    request.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[bellNamePred, cycleNamePred]];
+    NSError *error;
+    return [context executeFetchRequest:request error:&error];
+}
+
 + (NSString *)fullFormattedDateTimeFormat
 {
     return [NSString stringWithFormat:@"%@ %@", FORMAT_DATE_STRING, FORMAT_TIME_STRING];

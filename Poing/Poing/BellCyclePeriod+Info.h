@@ -10,6 +10,9 @@
 
 @interface BellCyclePeriod (Info)
 + (NSDate *)dateFromFullFormattedHSTString:(NSString *)hstString;
++ (NSArray *)bellCyclePeriodsInSchedule:(NSString *)bellName
+                      withCycle:(NSString *)cycleName
+               inManagedObjectContext:(NSManagedObjectContext *)context;
 - (NSString *)formattedStartTime;
 - (NSString *)formattedEndTime;
 - (NSDate *)startTimeAssumingToday;
