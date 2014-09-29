@@ -13,6 +13,7 @@
 #import "SchoolDay+Create.h"
 #import "BellCycle+Create.h"
 #import "BellCyclePeriod+Create.h"
+#import "BellCyclePeriod+Info.h"
 #import "SchoolDay+Info.h"
 #import <CoreData/CoreData.h>
 #import <Parse/PFCloud.h>
@@ -164,12 +165,10 @@
                times:(NSArray *)times
 intoManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"BellCyclePeriod"];
-    NSPredicate *bellNamePred = [NSPredicate predicateWithFormat:@"bellCycle.bell.name = %@", bellName];
-    NSPredicate *cycleNamePred = [NSPredicate predicateWithFormat:@"bellCycle.cycle.name = %@", cycleName];
-    request.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[bellNamePred, cycleNamePred]];
     NSError *error;
-    NSArray *matches = [context executeFetchRequest:request error:&error];
+    NSArray *matches = [BellCyclePeriod bellCyclePeriodsInSchedule:bellName
+                                                         withCycle:cycleName
+                                            inManagedObjectContext:context];
     if([matches count])  {
         for(BellCyclePeriod *period in matches) {
             [context deleteObject:period];
