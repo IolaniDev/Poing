@@ -96,7 +96,7 @@
     [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
         NSString *appVer = config[@"currentTFVer"];
         NSLog(@"Fetched latest version info %@", appVer);
-        if(currentVer < appVer) {
+        if(![currentVer isEqualToString:appVer]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App update required!" message:[NSString stringWithFormat:@"Your Poing installation is out of date.  Please download the latest version (%@).  You are running version %@.", appVer, currentVer] delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
             NSLog(@"App is out of date.");
             [alert show];
