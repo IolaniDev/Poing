@@ -18,6 +18,7 @@
 #import <CoreData/CoreData.h>
 #import <Parse/PFCloud.h>
 #import <Parse/PFQuery.h>
+#import <Parse/PFConfig.h>
 
 #define BELL_ASSEMBLY_1 @"Assembly 1 Schedule"
 #define BELL_ASSEMBLY_2 @"Assembly 2 Schedule"
@@ -77,6 +78,7 @@
 
 + (void)loadScheduleDataWithContext:(NSManagedObjectContext *)context
 {
+    [self verifyCurrentAppVersion];
     if ([self scheduleLoadRequired:context])    {
         // Parse schedule:
         [self loadScheduleJSONIntoContext:context];
@@ -87,6 +89,21 @@
     } else  {
         [self fetchNewSchedules: context];
     }
+}
+
++ (void)verifyCurrentAppVersion {
+    NSString *currentVer = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
+        NSString *appVer = config[@"currentTFVer"];
+        NSLog(@"Fetched latest version info %@", appVer);
+        if(currentVer < appVer) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App update required!" message:[NSString stringWithFormat:@"Your Poing installation is out of date.  Please download the latest version (%@).  You are running version %@.", appVer, currentVer] delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+            NSLog(@"App is out of date.");
+            [alert show];
+        } else {
+            NSLog(@"App install is up to date.");
+        }
+    }];
 }
 
 + (void)verifyBellsCyclesPeriodsWithContext:(NSManagedObjectContext *)context
