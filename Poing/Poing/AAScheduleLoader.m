@@ -41,6 +41,8 @@
 #define BELL_PILOT_SCHEDULE_2 @"Pilot 2 Schedule "
 #define BELL_PILOT_SCHEDULE_3 @"Pilot 3 Schedule "
 
+#define BELL_MODIFIED_SCHEDULE @"Modified "
+
 #define CYCLE_1 @"1"
 #define CYCLE_3 @"3"
 #define CYCLE_7 @"7"
@@ -62,6 +64,7 @@
 #define PERIOD_CONVOCATION @"Convocation"
 #define PERIOD_CEREMONY @"Ceremony"
 #define PERIOD_BREAK @"Break"
+#define PERIOD_MORNING_GATHERING @"Morning Gathering"
 
 @implementation AAScheduleLoader
 
@@ -228,6 +231,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadPilotSchedule1DataIntoContext:context];
     [self loadPilotSchedule2DataIntoContext:context];
     [self loadPilotSchedule3DataIntoContext:context];
+    [self loadSpecialSchedulesIntoContext:context];
  
     // These must go last. They correct errors in the raw schedule.
     [self fetchNewSchedules:context];
@@ -319,6 +323,43 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
 //               bellName:BELL_CHAPEL
 //              cycleName:CYCLE_3
 //                context:context];
+}
+
++ (void)loadSpecialSchedulesIntoContext:(NSManagedObjectContext *)context
+{
+  // load special schedules like Modified Assembly 3
+    NSArray *periods = nil;
+    
+    // MODIFIED ASSEMBLY 3 - CYCLE 1
+    NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
+                       @{@"start": @"07:50", @"end": @"08:05"},
+                       @{@"start": @"08:10", @"end": @"08:49"},
+                       @{@"start": @"08:54", @"end": @"09:33"},
+                       @{@"start": @"09:38", @"end": @"10:17"},
+                       @{@"start": @"10:22", @"end": @"11:01"},
+                       @{@"start": @"11:06", @"end": @"11:45"},
+                       @{@"start": @"11:45", @"end": @"12:13"},
+                       @{@"start": @"12:18", @"end": @"12:57"},
+                       @{@"start": @"13:02", @"end": @"13:41"},
+                       @{@"start": @"13:46", @"end": @"14:25"},
+                       @{@"start": @"14:30", @"end": @"15:00"}];
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_MORNING_GATHERING,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_5,
+                PERIOD_LUNCH,
+                PERIOD_6,
+                PERIOD_7,
+                PERIOD_8,
+                PERIOD_ASSEMBLY];
+    [self loadBellName:[BELL_MODIFIED_SCHEDULE stringByAppendingString:BELL_ASSEMBLY_3]
+             cycleName:CYCLE_1
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+
 }
 
 + (void)loadBasicPeriodDataIntoContext:(NSManagedObjectContext *)context
