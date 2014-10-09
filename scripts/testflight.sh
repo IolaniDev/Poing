@@ -33,4 +33,4 @@ curl http://testflightapp.com/api/builds.json \
   -F team_token="$TEAM_TOKEN" \
   -F distribution_lists="$DISTRIBUTION_LISTS" \
   -F notes="$RELEASE_NOTES" -v \
-  -F notify="TRUE"
+  -F notify="FALSE"
