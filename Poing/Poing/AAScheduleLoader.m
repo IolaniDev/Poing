@@ -94,14 +94,22 @@
 + (void)verifyCurrentAppVersion {
     NSString *currentVer = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
-        NSString *appVer = config[@"currentTFVer"];
-        NSLog(@"Fetched latest version info %@", appVer);
-        if(![currentVer isEqualToString:appVer]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App update required!" message:[NSString stringWithFormat:@"Your Poing installation is out of date.  Please download the latest version (%@).  You are running version %@.", appVer, currentVer] delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
-            NSLog(@"App is out of date.");
+        if(!error)  {
+            NSString *appVer = config[@"currentTFVer"];
+            NSLog(@"Fetched latest version info %@", appVer);
+            if(![currentVer isEqualToString:appVer]) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App update required!" message:[NSString stringWithFormat:@"Your Poing installation is out of date.  Please download the latest version (%@).  You are running version %@.", appVer, currentVer] delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+                NSLog(@"App is out of date.");
+                [alert show];
+            } else {
+                NSLog(@"App install is up to date.");
+            }
+        }
+        else {
+            // currentVer was not retrieved, handle
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning!" message:@"Please connect to the Internet to get the latest schedule updates." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            NSLog(@"Error retrieving current app version.");
             [alert show];
-        } else {
-            NSLog(@"App install is up to date.");
         }
     }];
 }
