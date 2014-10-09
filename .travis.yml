@@ -12,7 +12,7 @@ env:
   - XCODEPROJ=Poing/Poing
   - BUILD_SCHEME='Poing'
   - BUILD_CONFIGURATION='Release'
-  - BUILD_SDK=iphoneos7.1
+  - BUILD_SDK=iphoneos
   - DISTRIBUTION_LISTS="Poing Test"
   - APPNAME="Poing"
   - 'DEVELOPER_NAME="iPhone Distribution: Iolani School"'
