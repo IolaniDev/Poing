@@ -100,7 +100,7 @@
         if(!error && ![config[@"currentTFVer"] isEqual:nil])  {
             NSString *appVer = config[@"currentTFVer"];
             NSLog(@"Fetched latest version info %@", appVer);
-            if(![currentVer isEqualToString:appVer] && [currentVer isEqual:nil]) {
+            if(![currentVer isEqualToString:appVer]) {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App update required!" message:[NSString stringWithFormat:@"Your Poing installation is out of date.  Please download the latest version (%@) from TestFlight.  You are running version %@.", appVer, currentVer] delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
                 NSLog(@"App is out of date.  Version %@ reported, currently running version %@.", appVer, currentVer);
                 [alert show];
