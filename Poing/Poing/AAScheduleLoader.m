@@ -97,7 +97,7 @@
 + (void)verifyCurrentAppVersion {
     NSString *currentVer = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
-        if(!error && config[@"currentTFVer"])  {
+        if(!error && ![config[@"currentTFVer"] isEqual:nil])  {
             NSString *appVer = config[@"currentTFVer"];
             NSLog(@"Fetched latest version info %@", appVer);
             if(![currentVer isEqualToString:appVer] && [currentVer isEqual:nil]) {
@@ -186,7 +186,6 @@
     PFQuery *missingScheduleQuery = [PFQuery queryWithClassName:@"Override"];
     missingScheduleQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [missingScheduleQuery addAscendingOrder:@"updatedAt"];
-    //NSLog([[missingScheduleQuery getFirstObject] valueForKey:@"isMissing"]);
     [missingScheduleQuery whereKey:@"isMissing" equalTo:@YES];
     [missingScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *missingSchedules, NSError *error) {
         if(!error)  {
