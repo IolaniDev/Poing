@@ -182,6 +182,23 @@
             }
         }
     }];
+    
+    PFQuery *missingScheduleQuery = [PFQuery queryWithClassName:@"Override"];
+    missingScheduleQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    [missingScheduleQuery addAscendingOrder:@"updatedAt"];
+    //NSLog([[missingScheduleQuery getFirstObject] valueForKey:@"isMissing"]);
+    [missingScheduleQuery whereKey:@"isMissing" equalTo:@YES];
+    [missingScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *missingSchedules, NSError *error) {
+        if(!error)  {
+            for(PFObject *schedule in missingSchedules) {
+                [SchoolDay schoolDayWithDayString:[schedule objectForKey:@"dayString"]
+                                         bellName:[schedule objectForKey:@"bellName"]
+                                        cycleName:[schedule objectForKey:@"cycleName"]
+                           inManagedObjectContext:context];
+            }
+        }
+    }];
+    
     [self overrides:context];
 }
 
@@ -277,6 +294,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     overrideQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
     // load most recent overrides first
     [overrideQuery addAscendingOrder:@"updatedAt"];
+    [overrideQuery whereKey:@"isMissing" equalTo:@NO];
     [overrideQuery findObjectsInBackgroundWithBlock:^(NSArray *overrides, NSError *error) {
         if(!error)  {
             for(PFObject *schedule in overrides)   {
