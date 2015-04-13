@@ -10,7 +10,6 @@
 #import "AAScheduleLoader.h"
 #import "AASchoolDayCDTVC.h"
 #import "AATeacherLoader.h"
-#import "TestFlight.h"
 #import <Parse/Parse.h>
 
 @implementation AAAppDelegate
@@ -90,8 +89,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Initialize TestFlight API
-    [TestFlight takeOff:@"e3f67dcb-b0e1-4e81-9b7a-310076574391"];
     // Initialize Parse SDK
     [Parse setApplicationId:@"BFr7sOFOHuNT4jZxebO8o6xOoCZnEqkZwp79P2Ns"
                   clientKey:@"fMfKdKCIrEhwNmD1pIo6wRihYdXNg4em3BptnpfG"];
