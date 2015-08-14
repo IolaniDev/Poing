@@ -36,6 +36,7 @@
 #define BELL_SPECIAL_MAY_DAY @"Special May Day Schedule"
 #define BELL_VARIETY_ATHLETIC_ASSEMBLY @"Variety/Athletic Assembly Schedule"
 #define BELL_CHAPEL_MOVING_UP @"Moving Up Chapel Schedule"
+#define BELL_SCHEDULE @"Schedule "
 //#define BELL_PILOT_SCHEDULE_1_4862 @"Pilot 1 Extended 3 Schedule (4,8,6,2)"
 //#define BELL_PILOT_SCHEDULE_1_3751 @"Pilot 1 Extended 3 Schedule (3,7,5,1)"
 //#define BELL_PILOT_SCHEDULE_2 @"Pilot 2 Schedule "
@@ -1110,7 +1111,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_LUNCH,
                 PERIOD_5,
                 PERIOD_6];
-    [self loadBellName:[BELL_PILOT_SCHEDULE_3 stringByAppendingString:@"A"]
+    [self loadBellName:[BELL_SCHEDULE stringByAppendingString:@"A"]
              cycleName:CYCLE_PILOT
                periods:periods
                  times:times intoManagedObjectContext:context];
@@ -1126,7 +1127,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_LUNCH,
                 PERIOD_3,
                 PERIOD_4];
-    [self loadBellName:[BELL_PILOT_SCHEDULE_3 stringByAppendingString:@"B"]
+    [self loadBellName:[BELL_SCHEDULE stringByAppendingString:@"B"]
              cycleName:CYCLE_PILOT
                periods:periods
                  times:times intoManagedObjectContext:context];
@@ -1142,7 +1143,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_LUNCH,
                 PERIOD_1,
                 PERIOD_2];
-    [self loadBellName:[BELL_PILOT_SCHEDULE_3 stringByAppendingString:@"C"]
+    [self loadBellName:[BELL_SCHEDULE stringByAppendingString:@"C"]
              cycleName:CYCLE_PILOT
                periods:periods
                  times:times intoManagedObjectContext:context];
@@ -1158,7 +1159,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_LUNCH,
                 PERIOD_7,
                 PERIOD_8];
-    [self loadBellName:[BELL_PILOT_SCHEDULE_3 stringByAppendingString:@"D"]
+    [self loadBellName:[BELL_SCHEDULE stringByAppendingString:@"D"]
              cycleName:CYCLE_PILOT
                periods:periods
                  times:times intoManagedObjectContext:context];
@@ -1178,7 +1179,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_3,
                 PERIOD_4];
     
-    [self loadBellName:[BELL_PILOT_SCHEDULE_3 stringByAppendingString:@"E"]
+    [self loadBellName:[BELL_SCHEDULE stringByAppendingString:@"E"]
              cycleName:CYCLE_PILOT
                periods:periods
                  times:times intoManagedObjectContext:context];
