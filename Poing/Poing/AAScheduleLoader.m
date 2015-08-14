@@ -103,7 +103,7 @@
             NSString *releaseNotes = config[@"releaseNotes"];
             NSLog(@"Fetched latest version info %@", appVer);
             if(![currentVer isEqualToString:appVer]) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App update required!" message:[NSString stringWithFormat:@"Your Poing installation is out of date.  Please download the latest version (%@) from TestFlight.  You are running version %@. Update includes: %@.", appVer, currentVer, releaseNotes] delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App update required!" message:[NSString stringWithFormat:@"Your Poing installation is out of date.  Please download the latest version (%@) from TestFlight.  You are running version %@. New in Poing: %@.", appVer, currentVer, releaseNotes] delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
                 NSLog(@"App is out of date.  Version %@ reported, currently running version %@.", appVer, currentVer);
                 [alert show];
             } else {
