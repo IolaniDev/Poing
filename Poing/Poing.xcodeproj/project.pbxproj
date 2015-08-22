@@ -19,6 +19,7 @@
 		456983101B884CF200E7FDB7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456983091B884CF200E7FDB7 /* Bolts.framework */; };
 		456983111B884CF200E7FDB7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4569830A1B884CF200E7FDB7 /* Parse.framework */; };
 		456983121B884CF200E7FDB7 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4569830B1B884CF200E7FDB7 /* ParseCrashReporting.framework */; };
+		456983181B884D5800E7FDB7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 456983171B884D5800E7FDB7 /* libsqlite3.dylib */; };
 		CF09D99618BA14690050B520 /* AASlimPortraitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF09D99518BA14690050B520 /* AASlimPortraitCell.m */; };
 		CF09D99B18BA17180050B520 /* AAMemberDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = CF09D99A18BA17180050B520 /* AAMemberDetail.m */; };
 		CF09D99E18BA188D0050B520 /* AASlimPortraitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF09D99D18BA188D0050B520 /* AASlimPortraitVC.m */; };
@@ -100,6 +101,7 @@
 		456983091B884CF200E7FDB7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		4569830A1B884CF200E7FDB7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		4569830B1B884CF200E7FDB7 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		456983171B884D5800E7FDB7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		45D05B56198E331800063674 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CF09D99418BA14690050B520 /* AASlimPortraitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASlimPortraitCell.h; sourceTree = "<group>"; };
 		CF09D99518BA14690050B520 /* AASlimPortraitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASlimPortraitCell.m; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				456983181B884D5800E7FDB7 /* libsqlite3.dylib in Frameworks */,
 				45436BF619BEDEFB00F9774A /* SystemConfiguration.framework in Frameworks */,
 				45436BF419BEDEE900F9774A /* StoreKit.framework in Frameworks */,
 				45436BF219BEDEE100F9774A /* Security.framework in Frameworks */,
@@ -286,6 +289,7 @@
 		CF108BDB185C0A01001E6706 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				456983171B884D5800E7FDB7 /* libsqlite3.dylib */,
 				456983091B884CF200E7FDB7 /* Bolts.framework */,
 				4569830A1B884CF200E7FDB7 /* Parse.framework */,
 				4569830B1B884CF200E7FDB7 /* ParseCrashReporting.framework */,
