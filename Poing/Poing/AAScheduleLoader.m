@@ -36,18 +36,25 @@
 #define BELL_SPECIAL_MAY_DAY @"Special May Day Schedule"
 #define BELL_VARIETY_ATHLETIC_ASSEMBLY @"Variety/Athletic Assembly Schedule"
 #define BELL_CHAPEL_MOVING_UP @"Moving Up Chapel Schedule"
-#define BELL_SCHEDULE @"Schedule "
-//#define BELL_PILOT_SCHEDULE_1_4862 @"Pilot 1 Extended 3 Schedule (4,8,6,2)"
-//#define BELL_PILOT_SCHEDULE_1_3751 @"Pilot 1 Extended 3 Schedule (3,7,5,1)"
-//#define BELL_PILOT_SCHEDULE_2 @"Pilot 2 Schedule "
-#define BELL_PILOT_SCHEDULE_3 @"Pilot 3 Schedule "
-
+#define BELL_SCHEDULE_A @"A Schedule"
+#define BELL_SCHEDULE_B @"B Schedule"
+#define BELL_SCHEDULE_C @"C Schedule"
+#define BELL_SCHEDULE_D @"D Schedule"
+#define BELL_SCHEDULE_E @"E Schedule"
+#define BELL_SCHEDULE_F @"F Schedule"
+#define BELL_ASSEMBLY_E1 @"Assembly E1 Schedule"
+#define BELL_ASSEMBLY_F1 @"Assembly F1 Schedule"
+#define BELL_ASSEMBLY_E2 @"Assembly E2 Schedule"
+#define BELL_ASSEMBLY_F2 @"Assembly F2 Schedule"
+#define BELL_ASSEMBLY_E3 @"Assembly E3 Schedule"
+#define BELL_ASSEMBLY_F3 @"Assembly F3 Schedule"
 #define BELL_MODIFIED_SCHEDULE @"Modified "
 
 #define CYCLE_1 @"1"
 #define CYCLE_3 @"3"
 #define CYCLE_7 @"7"
-#define CYCLE_PILOT @"Pilot"
+#define CYCLE_REGULAR @"Regular"
+#define CYCLE_ALTERNATE @"Alternate"
 
 #define PERIOD_HOME_ROOM @"Home Room"
 #define PERIOD_1 @"1"
@@ -1111,8 +1118,8 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_LUNCH,
                 PERIOD_5,
                 PERIOD_6];
-    [self loadBellName:[BELL_SCHEDULE stringByAppendingString:@"A"]
-             cycleName:CYCLE_PILOT
+    [self loadBellName:BELL_SCHEDULE_A
+             cycleName:CYCLE_REGULAR
                periods:periods
                  times:times intoManagedObjectContext:context];
     
@@ -1127,8 +1134,8 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_LUNCH,
                 PERIOD_3,
                 PERIOD_4];
-    [self loadBellName:[BELL_SCHEDULE stringByAppendingString:@"B"]
-             cycleName:CYCLE_PILOT
+    [self loadBellName:BELL_SCHEDULE_B
+             cycleName:CYCLE_REGULAR
                periods:periods
                  times:times intoManagedObjectContext:context];
     
@@ -1143,8 +1150,8 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_LUNCH,
                 PERIOD_1,
                 PERIOD_2];
-    [self loadBellName:[BELL_SCHEDULE stringByAppendingString:@"C"]
-             cycleName:CYCLE_PILOT
+    [self loadBellName:BELL_SCHEDULE_C
+             cycleName:CYCLE_REGULAR
                periods:periods
                  times:times intoManagedObjectContext:context];
     
@@ -1159,8 +1166,8 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_LUNCH,
                 PERIOD_7,
                 PERIOD_8];
-    [self loadBellName:[BELL_SCHEDULE stringByAppendingString:@"D"]
-             cycleName:CYCLE_PILOT
+    [self loadBellName:BELL_SCHEDULE_D
+             cycleName:CYCLE_REGULAR
                periods:periods
                  times:times intoManagedObjectContext:context];
     
@@ -1179,8 +1186,8 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_3,
                 PERIOD_4];
     
-    [self loadBellName:[BELL_SCHEDULE stringByAppendingString:@"E"]
-             cycleName:CYCLE_PILOT
+    [self loadBellName:BELL_SCHEDULE_E
+             cycleName:CYCLE_REGULAR
                periods:periods
                  times:times intoManagedObjectContext:context];
     periods = @[PERIOD_HOME_ROOM,
@@ -1189,6 +1196,9 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_MEETING " / " PERIOD_LUNCH,
                 PERIOD_7,
                 PERIOD_8];
+    [self loadBellName:BELL_SCHEDULE_F
+             cycleName:CYCLE_REGULAR
+               periods:periods times:periods intoManagedObjectContext:context];
 }
 
 @end
