@@ -70,13 +70,19 @@
 
 + (BOOL)scheduleLoadRequired:(NSManagedObjectContext *)context
 {
-    BOOL hasFirstDay = (BOOL)[SchoolDay schoolDayForString:@"2014-08-25"
-                                           inContext:context];
-    SchoolDay *day = [SchoolDay schoolDayForString:@"2015-05-29"
-                                         inContext:context];
-    BOOL hasLastDay = (BOOL)[day.bellCycle.bell.name isEqualToString:BELL_BASIC];
+    // Check if schedules need to be loaded from JSON file
+    PFConfig *config = [PFConfig currentConfig];
+    if(config[@"firstDay"] && config[@"lastDay"]) {
+        BOOL hasFirstDay = (BOOL)[SchoolDay schoolDayForString:config[@"firstDay"]
+                                                inContext:context];
     
-    return !hasFirstDay || !hasLastDay;
+        BOOL hasLastDay = (BOOL)[SchoolDay schoolDayForString:config[@"lastDay"]
+                                                inContext:context];
+        return !(hasFirstDay && hasLastDay);
+    } else {
+        // Return true if PFConfig is not loaded yet (e.g. app has never been run)
+        return true;
+    }
 }
 
 + (void)loadScheduleDataWithContext:(NSManagedObjectContext *)context
