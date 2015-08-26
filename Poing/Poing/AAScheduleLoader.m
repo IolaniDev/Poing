@@ -989,8 +989,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
 + (void) loadNormalScheduleDataIntoContext: (NSManagedObjectContext *)context
 {
     NSArray *periods = nil;
-    NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
-                       @{@"start": @"07:50", @"end": @"08:10"},
+    NSArray *times = @[@{@"start": @"07:40", @"end": @"08:10"},
                        @{@"start": @"08:15", @"end": @"09:10"},
                        @{@"start": @"09:15", @"end": @"10:10"},
                        @{@"start": @"10:10", @"end": @"10:20"},
@@ -1000,8 +999,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                        @{@"start": @"13:05", @"end": @"14:00"},
                        @{@"start": @"14:05", @"end": @"15:00"}];
     // SCHEDULE A
-    periods = @[PERIOD_HOME_ROOM,
-                PERIOD_CHAPEL,
+    periods = @[PERIOD_HOME_ROOM " / " PERIOD_CHAPEL,
                 PERIOD_1,
                 PERIOD_2,
                 PERIOD_BREAK,
@@ -1014,10 +1012,9 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
              cycleName:CYCLE_REGULAR
                periods:periods
                  times:times intoManagedObjectContext:context];
-    
+
     // SCHEDULE B
-    periods = @[PERIOD_HOME_ROOM,
-                PERIOD_CHAPEL,
+    periods = @[PERIOD_HOME_ROOM " / " PERIOD_CHAPEL,
                 PERIOD_7,
                 PERIOD_8,
                 PERIOD_BREAK,
@@ -1032,8 +1029,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                  times:times intoManagedObjectContext:context];
     
     // SCHEDULE C
-    periods = @[PERIOD_HOME_ROOM,
-                PERIOD_CHAPEL,
+    periods = @[PERIOD_HOME_ROOM " / " PERIOD_CHAPEL,
                 PERIOD_5,
                 PERIOD_6,
                 PERIOD_BREAK,
@@ -1048,8 +1044,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                  times:times intoManagedObjectContext:context];
     
     // SCHEDULE D
-    periods = @[PERIOD_HOME_ROOM,
-                PERIOD_CHAPEL,
+    periods = @[PERIOD_HOME_ROOM " / " PERIOD_CHAPEL,
                 PERIOD_3,
                 PERIOD_4,
                 PERIOD_BREAK,
@@ -1082,12 +1077,14 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
              cycleName:CYCLE_REGULAR
                periods:periods
                  times:times intoManagedObjectContext:context];
+    
     periods = @[PERIOD_HOME_ROOM,
                 PERIOD_5,
                 PERIOD_6,
                 PERIOD_MEETING " / " PERIOD_LUNCH,
                 PERIOD_7,
                 PERIOD_8];
+    
     [self loadBellName:BELL_SCHEDULE_F
              cycleName:CYCLE_REGULAR
                periods:periods times:periods intoManagedObjectContext:context];
