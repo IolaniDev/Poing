@@ -912,7 +912,201 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     
     [self loadBellName:BELL_SCHEDULE_F
              cycleName:CYCLE_ALTERNATE
-               periods:periods times:periods intoManagedObjectContext:context];
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+
+}
+
++ (void)loadAssemblyEF1ScheduleDataIntoContect:(NSManagedObjectContext *)context
+{
+    NSArray *periods = nil;
+    NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
+                       @{@"start": @"07:50", @"end": @"08:35"},
+                       @{@"start": @"08:40", @"end": @"09:50"},
+                       @{@"start": @"09:55", @"end": @"11:05"},
+                       @{@"start": @"11:05", @"end": @"12:30"},
+                       @{@"start": @"12:35", @"end": @"13:45"},
+                       @{@"start": @"13:50", @"end": @"15:00"}];
+    
+    // ASSEMBLY SCHEDULE E1
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CHAPEL " / " PERIOD_ASSEMBLY,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_3,
+                PERIOD_4];
+    [self loadBellName:BELL_ASSEMBLY_E1
+             cycleName:CYCLE_REGULAR
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // ALTERNATE E1
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CHAPEL " / " PERIOD_ASSEMBLY,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_1,
+                PERIOD_2];
+    [self loadBellName:BELL_ASSEMBLY_E1
+             cycleName:CYCLE_ALTERNATE
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // ASSEMBLY SCHEDULE F1
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CHAPEL " / " PERIOD_ASSEMBLY,
+                PERIOD_5,
+                PERIOD_6,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_7,
+                PERIOD_8];
+    [self loadBellName:BELL_ASSEMBLY_F1
+             cycleName:CYCLE_REGULAR
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // ALTERNATE F1
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CHAPEL " / " PERIOD_ASSEMBLY,
+                PERIOD_7,
+                PERIOD_8,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_5,
+                PERIOD_6];
+    [self loadBellName:BELL_ASSEMBLY_F1
+             cycleName:CYCLE_ALTERNATE
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+}
+
++ (void)loadAssemblyEF2ScheduleDataIntoContect:(NSManagedObjectContext *)context
+{
+    NSArray *periods = nil;
+    NSArray *times = @[@{@"start": @"07:40", @"end": @"08:10"},
+                       @{@"start": @"08:15", @"end": @"09:25"},
+                       @{@"start": @"09:30", @"end": @"10:40"},
+                       @{@"start": @"10:45", @"end": @"11:30"},
+                       @{@"start": @"11:30", @"end": @"12:30"},
+                       @{@"start": @"12:35", @"end": @"13:45"},
+                       @{@"start": @"13:50", @"end": @"15:00"}];
+    
+    // ASSEMBLY SCHEDULE E2
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_ASSEMBLY,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_3,
+                PERIOD_4];
+    [self loadBellName:BELL_ASSEMBLY_E2
+             cycleName:CYCLE_REGULAR
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // ALTERNATE E2
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_ASSEMBLY,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_1,
+                PERIOD_2];
+    [self loadBellName:BELL_ASSEMBLY_E2
+             cycleName:CYCLE_ALTERNATE
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // ASSEMBLY SCHEDULE F2
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_5,
+                PERIOD_6,
+                PERIOD_ASSEMBLY,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_7,
+                PERIOD_8];
+    [self loadBellName:BELL_ASSEMBLY_F2
+             cycleName:CYCLE_REGULAR
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // ALTERNATE F2
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_7,
+                PERIOD_8,
+                PERIOD_ASSEMBLY,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_5,
+                PERIOD_6];
+    [self loadBellName:BELL_ASSEMBLY_F2
+             cycleName:CYCLE_ALTERNATE
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+}
+
++ (void)loadAssemblyEF3ScheduleDataIntoContect:(NSManagedObjectContext *)context
+{
+    NSArray *periods = nil;
+    NSArray *times = @[@{@"start": @"07:40", @"end": @"08:10"},
+                       @{@"start": @"08:15", @"end": @"09:25"},
+                       @{@"start": @"09:30", @"end": @"10:40"},
+                       @{@"start": @"10:45", @"end": @"11:55"},
+                       @{@"start": @"11:55", @"end": @"12:55"},
+                       @{@"start": @"13:00", @"end": @"14:10"},
+                       @{@"start": @"14:15", @"end": @"15:00"}];
+    
+    // ASSEMBLY SCHEDULE E3
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_3,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_4,
+                PERIOD_ASSEMBLY];
+    [self loadBellName:BELL_ASSEMBLY_E3
+             cycleName:CYCLE_REGULAR
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // ALTERNATE E3
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_1,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_2,
+                PERIOD_ASSEMBLY];
+    [self loadBellName:BELL_ASSEMBLY_E3
+             cycleName:CYCLE_ALTERNATE
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // ASSEMBLY SCHEDULE F3
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_5,
+                PERIOD_6,
+                PERIOD_7,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_8,
+                PERIOD_ASSEMBLY,];
+    [self loadBellName:BELL_ASSEMBLY_F3
+             cycleName:CYCLE_REGULAR
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    // ALTERNATE F3
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_7,
+                PERIOD_8,
+                PERIOD_5,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_6,
+                PERIOD_ASSEMBLY];
+    [self loadBellName:BELL_ASSEMBLY_F3
+             cycleName:CYCLE_ALTERNATE
+               periods:periods
+                 times:times intoManagedObjectContext:context];
 }
 
 @end
