@@ -887,7 +887,8 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     
     [self loadBellName:BELL_SCHEDULE_F
              cycleName:CYCLE_REGULAR
-               periods:periods times:periods intoManagedObjectContext:context];
+               periods:periods
+                 times:times intoManagedObjectContext:context];
     
     // SCHEDULE E and F (ALTERNATE)
     periods = @[PERIOD_HOME_ROOM,
