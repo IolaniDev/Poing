@@ -11,6 +11,7 @@
 #import "AASchoolDayCDTVC.h"
 #import "AATeacherLoader.h"
 #import <Parse/Parse.h>
+#import <ParseCrashReporting/ParseCrashReporting.h>
 
 @implementation AAAppDelegate
 
@@ -89,6 +90,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Setup Parse Crash Reporting
+    [ParseCrashReporting enable];
     // Initialize Parse SDK
     [Parse setApplicationId:@"BFr7sOFOHuNT4jZxebO8o6xOoCZnEqkZwp79P2Ns"
                   clientKey:@"fMfKdKCIrEhwNmD1pIo6wRihYdXNg4em3BptnpfG"];
