@@ -103,13 +103,14 @@
 + (void)verifyCurrentAppVersion {
     NSString *currentVer = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
-        if(!error && ![config[@"currentTFVer"] isEqual:nil])  {
-            NSString *appVer = config[@"currentTFVer"];
-            NSString *releaseNotes = config[@"releaseNotes"];
+        if(!error && ![config[@"currentProdVer"] isEqual:nil])  {
+            NSString *appVer = config[@"currentProdVer"];
+            NSString *message = config[@"message"];
+            NSString *header = config[@"messageHeader"];
             NSLog(@"Fetched latest version info %@", appVer);
             if(![currentVer isEqualToString:appVer]) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App update required!" message:[NSString stringWithFormat:@"Your Poing installation is out of date.  Please download the latest version (%@) from TestFlight.  You are running version %@. New in Poing: %@.", appVer, currentVer, releaseNotes] delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
-                NSLog(@"App is out of date.  Version %@ reported, currently running version %@.", appVer, currentVer);
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:header message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+                NSLog(@"App is out of date.  Version %@ reported, currently running version %@.  Received prompt: %@, %@", appVer, currentVer, header, message);
                 [alert show];
             } else {
                 NSLog(@"App install is up to date.");
