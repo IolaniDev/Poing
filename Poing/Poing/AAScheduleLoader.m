@@ -247,7 +247,11 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadAssembly3PeriodDataIntoContext:context];
     [self loadAthleticPeriodDataIntoContext:context];
     [self loadFairPeriodDataIntoContext:context];
-    [self loadNormalScheduleDataIntoContext:context];
+    [self loadABCDScheduleDataIntoContext:context];
+    [self loadEFScheduleDataIntoContext:context];
+    [self loadAssemblyEF1ScheduleDataIntoContect:context];
+    [self loadAssemblyEF2ScheduleDataIntoContect:context];
+    [self loadAssemblyEF3ScheduleDataIntoContect:context];
  
     // These must go last. They correct errors in the raw schedule.
     [self fetchNewSchedules:context];
@@ -778,7 +782,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     
 }
 
-+ (void)loadNormalScheduleDataIntoContext: (NSManagedObjectContext *)context
++ (void)loadABCDScheduleDataIntoContext: (NSManagedObjectContext *)context
 {
     NSArray *periods = nil;
     NSArray *times = @[@{@"start": @"07:40", @"end": @"08:10"},
@@ -849,14 +853,19 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
              cycleName:CYCLE_REGULAR
                periods:periods
                  times:times intoManagedObjectContext:context];
+}
+
++ (void)loadEFScheduleDataIntoContext:(NSManagedObjectContext *)context
+{
+    NSArray *periods = nil;
+    NSArray *times = @[@{@"start": @"07:40", @"end": @"08:10"},
+                       @{@"start": @"08:15", @"end": @"09:25"},
+                       @{@"start": @"09:30", @"end": @"10:40"},
+                       @{@"start": @"10:40", @"end": @"12:30"},
+                       @{@"start": @"12:35", @"end": @"13:45"},
+                       @{@"start": @"13:50", @"end": @"15:00"}];
     
     // SCHEDULE E and F
-    times = @[@{@"start": @"07:40", @"end": @"08:10"},
-              @{@"start": @"08:15", @"end": @"09:25"},
-              @{@"start": @"09:30", @"end": @"10:40"},
-              @{@"start": @"10:40", @"end": @"12:30"},
-              @{@"start": @"12:35", @"end": @"13:45"},
-              @{@"start": @"13:50", @"end": @"15:00"}];
     
     periods = @[PERIOD_HOME_ROOM,
                 PERIOD_1,
@@ -864,7 +873,6 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                 PERIOD_MEETING " / " PERIOD_LUNCH,
                 PERIOD_3,
                 PERIOD_4];
-    
     [self loadBellName:BELL_SCHEDULE_E
              cycleName:CYCLE_REGULAR
                periods:periods
