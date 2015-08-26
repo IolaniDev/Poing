@@ -1088,6 +1088,30 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadBellName:BELL_SCHEDULE_F
              cycleName:CYCLE_REGULAR
                periods:periods times:periods intoManagedObjectContext:context];
+    
+    // SCHEDULE E and F (ALTERNATE)
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_1,
+                PERIOD_2];
+    
+    [self loadBellName:BELL_SCHEDULE_E
+             cycleName:CYCLE_ALTERNATE
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+    
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_7,
+                PERIOD_8,
+                PERIOD_MEETING " / " PERIOD_LUNCH,
+                PERIOD_5,
+                PERIOD_6];
+    
+    [self loadBellName:BELL_SCHEDULE_F
+             cycleName:CYCLE_ALTERNATE
+               periods:periods times:periods intoManagedObjectContext:context];
 }
 
 @end
