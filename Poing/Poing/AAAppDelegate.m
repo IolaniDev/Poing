@@ -98,9 +98,13 @@
     // Track analytics in Parse
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     // Register for push notifications with Parse
-    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
-     UIRemoteNotificationTypeAlert|
-     UIRemoteNotificationTypeSound];
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
     // Override point for customization after application launch.
     [self setupManagedDocument];
     return YES;
