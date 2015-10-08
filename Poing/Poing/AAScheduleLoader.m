@@ -109,7 +109,7 @@
             NSString *header = config[@"messageHeader"];
             NSLog(@"Fetched latest version info %@", appVer);
             if(![currentVer isEqualToString:appVer]) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:header message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:header message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 NSLog(@"App is out of date.  Version %@ reported, currently running version %@.  Received prompt: %@, %@", appVer, currentVer, header, message);
                 [alert show];
             } else {
