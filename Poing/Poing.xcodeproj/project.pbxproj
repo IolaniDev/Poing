@@ -538,7 +538,7 @@
 			attributes = {
 				CLASSPREFIX = AA;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = AgencyAgency;
+				ORGANIZATIONNAME = "'Iolani School";
 				TargetAttributes = {
 					CF108BD8185C0A01001E6706 = {
 						DevelopmentTeam = P54LL4B956;
