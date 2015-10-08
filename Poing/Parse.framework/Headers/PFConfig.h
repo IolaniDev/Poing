@@ -9,11 +9,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import <Bolts/BFTask.h>
+
+#import <Parse/PFConstants.h>
 #import <Parse/PFNullability.h>
 
 PF_ASSUME_NONNULL_BEGIN
 
-@class BFTask;
 @class PFConfig;
 
 typedef void(^PFConfigResultBlock)(PFConfig *PF_NULLABLE_S config, NSError *PF_NULLABLE_S error);
@@ -46,7 +48,7 @@ typedef void(^PFConfigResultBlock)(PFConfig *PF_NULLABLE_S config, NSError *PF_N
 
  @returns Instance of `PFConfig` if the operation succeeded, otherwise `nil`.
  */
-+ (PF_NULLABLE PFConfig *)getConfig;
++ (PF_NULLABLE PFConfig *)getConfig PF_SWIFT_UNAVAILABLE;
 
 /*!
  @abstract Gets the `PFConfig` object *synchronously* from the server and sets an error if it occurs.
@@ -62,7 +64,7 @@ typedef void(^PFConfigResultBlock)(PFConfig *PF_NULLABLE_S config, NSError *PF_N
 
  @returns The task, that encapsulates the work being done.
  */
-+ (BFTask *)getConfigInBackground;
++ (BFTask PF_GENERIC(PFConfig *)*)getConfigInBackground;
 
 /*!
  @abstract Gets the `PFConfig` *asynchronously* and executes the given callback block.

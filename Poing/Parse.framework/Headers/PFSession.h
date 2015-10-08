@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import <Bolts/BFTask.h>
+
 #import <Parse/PFObject.h>
 #import <Parse/PFSubclassing.h>
 
@@ -35,7 +37,7 @@ typedef void(^PFSessionResultBlock)(PFSession *PF_NULLABLE_S session, NSError *P
 
  @returns A task that is `completed` with an instance of `PFSession` class or is `faulted` if the operation fails.
  */
-+ (BFTask *)getCurrentSessionInBackground;
++ (BFTask PF_GENERIC(PFSession *)*)getCurrentSessionInBackground;
 
 /*!
  *Asynchronously* fetches a `PFSession` object related to the current user.
