@@ -103,10 +103,10 @@
 + (void)verifyCurrentAppVersion {
     NSString *currentVer = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
-        if(!error && ![config[@"currentProdVer"] isEqual:nil])  {
-            NSString *appVer = config[@"currentProdVer"];
-            NSString *message = config[@"message"];
-            NSString *header = config[@"messageHeader"];
+        if(!error && ![config[@"currentTFVer"] isEqual:nil])  {
+            NSString *appVer = config[@"currentTFVer"];
+            NSString *message = config[@"messageTF"];
+            NSString *header = config[@"messageHeaderTF"];
             NSLog(@"Fetched latest version info %@", appVer);
             if(![currentVer isEqualToString:appVer]) {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:header message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
