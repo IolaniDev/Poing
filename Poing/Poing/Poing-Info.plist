@@ -24,10 +24,6 @@
 	<string>iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>iPad</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>UIStatusBarTintParameters</key>
