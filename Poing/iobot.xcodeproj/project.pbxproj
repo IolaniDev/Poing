@@ -112,21 +112,21 @@
 		CF09D99A18BA17180050B520 /* AAMemberDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAMemberDetail.m; sourceTree = "<group>"; };
 		CF09D99C18BA188D0050B520 /* AASlimPortraitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASlimPortraitVC.h; sourceTree = "<group>"; };
 		CF09D99D18BA188D0050B520 /* AASlimPortraitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASlimPortraitVC.m; sourceTree = "<group>"; };
-		CF108BD9185C0A01001E6706 /* Poing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF108BD9185C0A01001E6706 /* iobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF108BDC185C0A01001E6706 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF108BDE185C0A01001E6706 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CF108BE0185C0A01001E6706 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		CF108BE4185C0A01001E6706 /* Poing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Poing-Info.plist"; sourceTree = "<group>"; };
+		CF108BE4185C0A01001E6706 /* iobot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iobot-Info.plist"; sourceTree = "<group>"; };
 		CF108BE6185C0A01001E6706 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF108BE8185C0A01001E6706 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CF108BEA185C0A01001E6706 /* Poing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Poing-Prefix.pch"; sourceTree = "<group>"; };
+		CF108BEA185C0A01001E6706 /* iobot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iobot-Prefix.pch"; sourceTree = "<group>"; };
 		CF108BEB185C0A01001E6706 /* AAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAAppDelegate.h; sourceTree = "<group>"; };
 		CF108BEC185C0A01001E6706 /* AAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAAppDelegate.m; sourceTree = "<group>"; };
 		CF108BEF185C0A01001E6706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		CF108BF7185C0A01001E6706 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CF108BFD185C0A01001E6706 /* PoingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF108BFD185C0A01001E6706 /* iobot.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iobot.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF108BFE185C0A01001E6706 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		CF108C06185C0A01001E6706 /* PoingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PoingTests-Info.plist"; sourceTree = "<group>"; };
+		CF108C06185C0A01001E6706 /* iobotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iobotTests-Info.plist"; sourceTree = "<group>"; };
 		CF108C08185C0A01001E6706 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF108C0A185C0A01001E6706 /* PoingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoingTests.m; sourceTree = "<group>"; };
 		CF108C15185C3D01001E6706 /* BellSchedule.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BellSchedule.xcdatamodel; sourceTree = "<group>"; };
@@ -285,8 +285,8 @@
 		CF108BDA185C0A01001E6706 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CF108BD9185C0A01001E6706 /* Poing.app */,
-				CF108BFD185C0A01001E6706 /* PoingTests.xctest */,
+				CF108BD9185C0A01001E6706 /* iobot.app */,
+				CF108BFD185C0A01001E6706 /* iobot.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -343,10 +343,10 @@
 			isa = PBXGroup;
 			children = (
 				CF75DA08188345DE0089899D /* Images */,
-				CF108BE4185C0A01001E6706 /* Poing-Info.plist */,
+				CF108BE4185C0A01001E6706 /* iobot-Info.plist */,
 				CF108BE5185C0A01001E6706 /* InfoPlist.strings */,
 				CF108BE8185C0A01001E6706 /* main.m */,
-				CF108BEA185C0A01001E6706 /* Poing-Prefix.pch */,
+				CF108BEA185C0A01001E6706 /* iobot-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -363,7 +363,7 @@
 		CF108C05185C0A01001E6706 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CF108C06185C0A01001E6706 /* PoingTests-Info.plist */,
+				CF108C06185C0A01001E6706 /* iobotTests-Info.plist */,
 				CF108C07185C0A01001E6706 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -495,9 +495,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF108BD8185C0A01001E6706 /* Poing */ = {
+		CF108BD8185C0A01001E6706 /* iobot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF108C0E185C0A01001E6706 /* Build configuration list for PBXNativeTarget "Poing" */;
+			buildConfigurationList = CF108C0E185C0A01001E6706 /* Build configuration list for PBXNativeTarget "iobot" */;
 			buildPhases = (
 				CF108BD5185C0A01001E6706 /* Sources */,
 				CF108BD6185C0A01001E6706 /* Frameworks */,
@@ -508,14 +508,14 @@
 			);
 			dependencies = (
 			);
-			name = Poing;
+			name = iobot;
 			productName = Poing;
-			productReference = CF108BD9185C0A01001E6706 /* Poing.app */;
+			productReference = CF108BD9185C0A01001E6706 /* iobot.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CF108BFC185C0A01001E6706 /* PoingTests */ = {
+		CF108BFC185C0A01001E6706 /* iobotTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF108C11185C0A01001E6706 /* Build configuration list for PBXNativeTarget "PoingTests" */;
+			buildConfigurationList = CF108C11185C0A01001E6706 /* Build configuration list for PBXNativeTarget "iobotTests" */;
 			buildPhases = (
 				CF108BF9185C0A01001E6706 /* Sources */,
 				CF108BFA185C0A01001E6706 /* Frameworks */,
@@ -526,9 +526,9 @@
 			dependencies = (
 				CF108C03185C0A01001E6706 /* PBXTargetDependency */,
 			);
-			name = PoingTests;
+			name = iobotTests;
 			productName = PoingTests;
-			productReference = CF108BFD185C0A01001E6706 /* PoingTests.xctest */;
+			productReference = CF108BFD185C0A01001E6706 /* iobot.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -554,7 +554,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CF108BD4185C0A01001E6706 /* Build configuration list for PBXProject "Poing" */;
+			buildConfigurationList = CF108BD4185C0A01001E6706 /* Build configuration list for PBXProject "iobot" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -567,8 +567,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CF108BD8185C0A01001E6706 /* Poing */,
-				CF108BFC185C0A01001E6706 /* PoingTests */,
+				CF108BD8185C0A01001E6706 /* iobot */,
+				CF108BFC185C0A01001E6706 /* iobotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -676,7 +676,7 @@
 /* Begin PBXTargetDependency section */
 		CF108C03185C0A01001E6706 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CF108BD8185C0A01001E6706 /* Poing */;
+			target = CF108BD8185C0A01001E6706 /* iobot */;
 			targetProxy = CF108C02185C0A01001E6706 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -795,13 +795,13 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Poing/Poing-Prefix.pch";
-				INFOPLIST_FILE = "Poing/Poing-Info.plist";
+				GCC_PREFIX_HEADER = "Poing/iobot-Prefix.pch";
+				INFOPLIST_FILE = "Poing/iobot-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.iolani.appstore.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iobot;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -821,13 +821,13 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Poing/Poing-Prefix.pch";
-				INFOPLIST_FILE = "Poing/Poing-Info.plist";
+				GCC_PREFIX_HEADER = "Poing/iobot-Prefix.pch";
+				INFOPLIST_FILE = "Poing/iobot-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.iolani.appstore.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iobot;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
@@ -845,14 +845,14 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Poing/Poing-Prefix.pch";
+				GCC_PREFIX_HEADER = "Poing/iobot-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "PoingTests/PoingTests-Info.plist";
+				INFOPLIST_FILE = "PoingTests/iobotTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.iolani.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iobot;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -868,10 +868,10 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Poing/Poing-Prefix.pch";
-				INFOPLIST_FILE = "PoingTests/PoingTests-Info.plist";
+				GCC_PREFIX_HEADER = "Poing/iobot-Prefix.pch";
+				INFOPLIST_FILE = "PoingTests/iobotTests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.iolani.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iobot;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -880,7 +880,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF108BD4185C0A01001E6706 /* Build configuration list for PBXProject "Poing" */ = {
+		CF108BD4185C0A01001E6706 /* Build configuration list for PBXProject "iobot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF108C0C185C0A01001E6706 /* Debug */,
@@ -889,7 +889,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF108C0E185C0A01001E6706 /* Build configuration list for PBXNativeTarget "Poing" */ = {
+		CF108C0E185C0A01001E6706 /* Build configuration list for PBXNativeTarget "iobot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF108C0F185C0A01001E6706 /* Debug */,
@@ -898,7 +898,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF108C11185C0A01001E6706 /* Build configuration list for PBXNativeTarget "PoingTests" */ = {
+		CF108C11185C0A01001E6706 /* Build configuration list for PBXNativeTarget "iobotTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF108C12185C0A01001E6706 /* Debug */,

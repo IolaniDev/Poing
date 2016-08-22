@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CF108BD8185C0A01001E6706"
-               BuildableName = "Poing.app"
-               BlueprintName = "Poing"
-               ReferencedContainer = "container:Poing.xcodeproj">
+               BuildableName = "iobot.app"
+               BlueprintName = "iobot"
+               ReferencedContainer = "container:iobot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CF108BFC185C0A01001E6706"
-               BuildableName = "PoingTests.xctest"
-               BlueprintName = "PoingTests"
-               ReferencedContainer = "container:Poing.xcodeproj">
+               BuildableName = "iobot.xctest"
+               BlueprintName = "iobotTests"
+               ReferencedContainer = "container:iobot.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF108BD8185C0A01001E6706"
-            BuildableName = "Poing.app"
-            BlueprintName = "Poing"
-            ReferencedContainer = "container:Poing.xcodeproj">
+            BuildableName = "iobot.app"
+            BlueprintName = "iobot"
+            ReferencedContainer = "container:iobot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF108BD8185C0A01001E6706"
-            BuildableName = "Poing.app"
-            BlueprintName = "Poing"
-            ReferencedContainer = "container:Poing.xcodeproj">
+            BuildableName = "iobot.app"
+            BlueprintName = "iobot"
+            ReferencedContainer = "container:iobot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CF108BD8185C0A01001E6706"
-            BuildableName = "Poing.app"
-            BlueprintName = "Poing"
-            ReferencedContainer = "container:Poing.xcodeproj">
+            BuildableName = "iobot.app"
+            BlueprintName = "iobot"
+            ReferencedContainer = "container:iobot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
