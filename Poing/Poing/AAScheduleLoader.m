@@ -109,11 +109,11 @@
                 NSString *currentTFVer = config[@"currentTFVer"];
                 NSString *currentASVer = config[@"currentASVer"];
                 NSString *currentARVer = config[@"currentARVer"];
-                NSLog(@"Fetched latest version info for Poing Apple distro v%@, v%@, and v%@.", currentASVer, currentTFVer, currentARVer);
+                NSLog(@"Fetched latest version info for iobot Apple distro v%@, v%@, and v%@.", currentASVer, currentTFVer, currentARVer);
                 if(!error && ![currentVer isEqualToString:currentTFVer] && ![currentVer isEqualToString:currentASVer] && ![currentVer isEqualToString:currentARVer]) {
                     NSString *message = config[@"messageAppleDistro"];
                     NSString *header = config[@"headerAppleDistro"];
-                    NSLog(@"Poing v%@ is out of date.  Currently valid versions are: %@, %@, %@.  Received prompt: %@, %@", currentVer, currentASVer, currentTFVer, currentARVer, header, message);
+                    NSLog(@"iobot v%@ is out of date.  Currently valid versions are: %@, %@, %@.  Received prompt: %@, %@", currentVer, currentASVer, currentTFVer, currentARVer, header, message);
                     
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:header message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                     [alert show];
@@ -122,7 +122,7 @@
                 NSString *appVer = config[@"currentSSVer"];
                 NSString *message = config[@"messageSS"];
                 NSString *header = config[@"messageHeaderSS"];
-                NSLog(@"Fetched latest version info for Poing in-house v%@.", appVer);
+                NSLog(@"Fetched latest version info for iobot in-house v%@.", appVer);
                 if(![currentVer isEqualToString:appVer]) {
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:header message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
                     NSLog(@"App is out of date.  Version %@ reported, currently running version %@.  Received prompt: %@, %@", appVer, currentVer, header, message);
