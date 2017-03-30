@@ -12,6 +12,8 @@
 #import "AATeacherLoader.h"
 #import <Parse/Parse.h>
 #import <ParseCrashReporting/ParseCrashReporting.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AAAppDelegate
 
@@ -90,6 +92,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Setup Fabric with Crashlytics reporting
+    [Fabric with:@[[Crashlytics class]]];
     // Setup Parse Crash Reporting
     [ParseCrashReporting enable];
     // Initialize Parse SDK

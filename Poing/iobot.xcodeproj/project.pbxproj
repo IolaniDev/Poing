@@ -22,6 +22,8 @@
 		456983181B884D5800E7FDB7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 456983171B884D5800E7FDB7 /* libsqlite3.dylib */; };
 		45B75E841B8DA086000B4ACA /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B75E831B8DA086000B4ACA /* libstdc++.6.dylib */; };
 		45B75E851B8DA092000B4ACA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D05B56198E331800063674 /* libz.dylib */; };
+		45D817A31E8CD9B0002ADC19 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D817A11E8CD9B0002ADC19 /* Fabric.framework */; };
+		45D817A41E8CD9B0002ADC19 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D817A21E8CD9B0002ADC19 /* Crashlytics.framework */; };
 		CF09D99618BA14690050B520 /* AASlimPortraitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF09D99518BA14690050B520 /* AASlimPortraitCell.m */; };
 		CF09D99B18BA17180050B520 /* AAMemberDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = CF09D99A18BA17180050B520 /* AAMemberDetail.m */; };
 		CF09D99E18BA188D0050B520 /* AASlimPortraitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CF09D99D18BA188D0050B520 /* AASlimPortraitVC.m */; };
@@ -106,6 +108,8 @@
 		456983171B884D5800E7FDB7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		45B75E831B8DA086000B4ACA /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		45D05B56198E331800063674 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		45D817A11E8CD9B0002ADC19 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		45D817A21E8CD9B0002ADC19 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		CF09D99418BA14690050B520 /* AASlimPortraitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASlimPortraitCell.h; sourceTree = "<group>"; };
 		CF09D99518BA14690050B520 /* AASlimPortraitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASlimPortraitCell.m; sourceTree = "<group>"; };
 		CF09D99918BA17180050B520 /* AAMemberDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMemberDetail.h; sourceTree = "<group>"; };
@@ -214,8 +218,10 @@
 				45B75E851B8DA092000B4ACA /* libz.dylib in Frameworks */,
 				454A030C1BDF664D00ECE079 /* ParseCrashReporting.framework in Frameworks */,
 				45B75E841B8DA086000B4ACA /* libstdc++.6.dylib in Frameworks */,
+				45D817A31E8CD9B0002ADC19 /* Fabric.framework in Frameworks */,
 				456983181B884D5800E7FDB7 /* libsqlite3.dylib in Frameworks */,
 				45436BF619BEDEFB00F9774A /* SystemConfiguration.framework in Frameworks */,
+				45D817A41E8CD9B0002ADC19 /* Crashlytics.framework in Frameworks */,
 				45436BF419BEDEE900F9774A /* StoreKit.framework in Frameworks */,
 				45436BF219BEDEE100F9774A /* Security.framework in Frameworks */,
 				454A030B1BDF664D00ECE079 /* Parse.framework in Frameworks */,
@@ -279,6 +285,8 @@
 				CF108C04185C0A01001E6706 /* PoingTests */,
 				CF108BDB185C0A01001E6706 /* Frameworks */,
 				CF108BDA185C0A01001E6706 /* Products */,
+				45D817A11E8CD9B0002ADC19 /* Fabric.framework */,
+				45D817A21E8CD9B0002ADC19 /* Crashlytics.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -611,7 +619,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "GIT_RELEASE_VERSION=$(git describe --tags --always --dirty)\nCOMMITS=$(git rev-list HEAD | wc -l)\nCOMMITS=$(($COMMITS))\ndefaults write \"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH%.*}\" \"CFBundleShortVersionString\" \"${GIT_RELEASE_VERSION#*v}\"\ndefaults write \"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH%.*}\" \"CFBundleVersion\" \"${COMMITS}\"";
+			shellScript = "./Fabric.framework/run 3cc14241b1150b2ade98a7a38be2b1333a5a4e16 8818fbb32627ca0f989d076297c1cd459bc305fb59b67c92ef6ae642ad0a2539\n\nGIT_RELEASE_VERSION=$(git describe --tags --always --dirty)\nCOMMITS=$(git rev-list HEAD | wc -l)\nCOMMITS=$(($COMMITS))\ndefaults write \"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH%.*}\" \"CFBundleShortVersionString\" \"${GIT_RELEASE_VERSION#*v}\"\ndefaults write \"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH%.*}\" \"CFBundleVersion\" \"${COMMITS}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
