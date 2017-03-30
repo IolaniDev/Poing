@@ -97,8 +97,11 @@
     // Setup Parse Crash Reporting
     [ParseCrashReporting enable];
     // Initialize Parse SDK
-    [Parse setApplicationId:@"BFr7sOFOHuNT4jZxebO8o6xOoCZnEqkZwp79P2Ns"
-                  clientKey:@"fMfKdKCIrEhwNmD1pIo6wRihYdXNg4em3BptnpfG"];
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+        configuration.applicationId = @"914213d7-ae97-4d2c-a316-66bb81efa382";
+        configuration.clientKey = @"";
+        configuration.server = @"https://parse.buddy.com/parse";
+    }]];
     // Track analytics in Parse
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     // Register for push notifications with Parse
