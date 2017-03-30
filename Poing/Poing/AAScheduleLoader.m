@@ -110,7 +110,7 @@
                 NSString *currentASVer = config[@"currentASVer"];
                 NSString *currentARVer = config[@"currentARVer"];
                 NSLog(@"Fetched latest version info for iobot Apple distro v%@, v%@, and v%@.", currentASVer, currentTFVer, currentARVer);
-                if(!error && ![currentVer isEqualToString:currentTFVer] && ![currentVer isEqualToString:currentASVer] && ![currentVer isEqualToString:currentARVer]) {
+                if(!error && ![currentVer containsString:currentTFVer] && ![currentVer containsString:currentASVer] && ![currentVer containsString:currentARVer]) {
                     NSString *message = config[@"messageAppleDistro"];
                     NSString *header = config[@"headerAppleDistro"];
                     NSLog(@"iobot v%@ is out of date.  Currently valid versions are: %@, %@, %@.  Received prompt: %@, %@", currentVer, currentASVer, currentTFVer, currentARVer, header, message);
