@@ -1,1 +1,0 @@
-xctool -project $XCODEPROJ.xcodeproj -scheme $BUILD_SCHEME -configuration $BUILD_CONFIGURATION -sdk $BUILD_SDK CONFIGURATION_BUILD_DIR='~/build/' build
