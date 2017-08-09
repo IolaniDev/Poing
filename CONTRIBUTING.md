@@ -1,4 +1,4 @@
-#Contributing to Poing
+# Contributing to Poing
 
 Wanna help contribute to Poing development?  We'd love to see your code become a part of our project!  
 
