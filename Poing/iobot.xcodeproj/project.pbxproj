@@ -17,8 +17,8 @@
 		45436BF419BEDEE900F9774A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF319BEDEE900F9774A /* StoreKit.framework */; };
 		45436BF619BEDEFB00F9774A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */; };
 		456983181B884D5800E7FDB7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 456983171B884D5800E7FDB7 /* libsqlite3.dylib */; };
-		45A6019A1F465BDE003B5872 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A601981F465BDE003B5872 /* Bolts.framework */; };
-		45A6019B1F465BDE003B5872 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A601991F465BDE003B5872 /* Parse.framework */; };
+		4574A7B021263E0D00818B14 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4574A7AE21263E0B00818B14 /* Bolts.framework */; };
+		4574A7B121263E0D00818B14 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4574A7AF21263E0D00818B14 /* Parse.framework */; };
 		45B75E841B8DA086000B4ACA /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B75E831B8DA086000B4ACA /* libstdc++.6.dylib */; };
 		45B75E851B8DA092000B4ACA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D05B56198E331800063674 /* libz.dylib */; };
 		45D817A31E8CD9B0002ADC19 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D817A11E8CD9B0002ADC19 /* Fabric.framework */; };
@@ -102,8 +102,8 @@
 		45436BF319BEDEE900F9774A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		456983171B884D5800E7FDB7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		45A601981F465BDE003B5872 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		45A601991F465BDE003B5872 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		4574A7AE21263E0B00818B14 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		4574A7AF21263E0D00818B14 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		45B43D0B1E8D104200F630CB /* iobot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iobot.entitlements; sourceTree = "<group>"; };
 		45B75E831B8DA086000B4ACA /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		45D05B56198E331800063674 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -215,8 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45B75E851B8DA092000B4ACA /* libz.dylib in Frameworks */,
-				45A6019A1F465BDE003B5872 /* Bolts.framework in Frameworks */,
-				454A030C1BDF664D00ECE079 /* ParseCrashReporting.framework in Frameworks */,
+				4574A7B021263E0D00818B14 /* Bolts.framework in Frameworks */,
 				45B75E841B8DA086000B4ACA /* libstdc++.6.dylib in Frameworks */,
 				45D817A31E8CD9B0002ADC19 /* Fabric.framework in Frameworks */,
 				456983181B884D5800E7FDB7 /* libsqlite3.dylib in Frameworks */,
@@ -228,7 +227,7 @@
 				45436BF019BEDED100F9774A /* MobileCoreServices.framework in Frameworks */,
 				45436BEE19BEDEBA00F9774A /* CoreLocation.framework in Frameworks */,
 				CF108BDF185C0A01001E6706 /* CoreGraphics.framework in Frameworks */,
-				45A6019B1F465BDE003B5872 /* Parse.framework in Frameworks */,
+				4574A7B121263E0D00818B14 /* Parse.framework in Frameworks */,
 				45436BEC19BEDEAA00F9774A /* CFNetwork.framework in Frameworks */,
 				45436BEA19BEDEA200F9774A /* AudioToolbox.framework in Frameworks */,
 				CF85FCF4185D501400C70BE1 /* CoreData.framework in Frameworks */,
@@ -302,9 +301,8 @@
 		CF108BDB185C0A01001E6706 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				45A601981F465BDE003B5872 /* Bolts.framework */,
-				45A601991F465BDE003B5872 /* Parse.framework */,
-				454A03091BDF664D00ECE079 /* ParseCrashReporting.framework */,
+				4574A7AE21263E0B00818B14 /* Bolts.framework */,
+				4574A7AF21263E0D00818B14 /* Parse.framework */,
 				45B75E831B8DA086000B4ACA /* libstdc++.6.dylib */,
 				456983171B884D5800E7FDB7 /* libsqlite3.dylib */,
 				45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */,
