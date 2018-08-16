@@ -11,7 +11,6 @@
 #import "AASchoolDayCDTVC.h"
 #import "AATeacherLoader.h"
 #import <Parse/Parse.h>
-#import <ParseCrashReporting/ParseCrashReporting.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -94,8 +93,6 @@
 {
     // Setup Fabric with Crashlytics reporting
     [Fabric with:@[[Crashlytics class]]];
-    // Setup Parse Crash Reporting
-    [ParseCrashReporting enable];
     // Initialize Parse SDK
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         configuration.applicationId = @"914213d7-ae97-4d2c-a316-66bb81efa382";

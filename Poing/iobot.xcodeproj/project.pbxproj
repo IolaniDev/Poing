@@ -16,7 +16,6 @@
 		45436BF219BEDEE100F9774A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF119BEDEE100F9774A /* Security.framework */; };
 		45436BF419BEDEE900F9774A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF319BEDEE900F9774A /* StoreKit.framework */; };
 		45436BF619BEDEFB00F9774A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */; };
-		454A030C1BDF664D00ECE079 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454A03091BDF664D00ECE079 /* ParseCrashReporting.framework */; };
 		456983181B884D5800E7FDB7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 456983171B884D5800E7FDB7 /* libsqlite3.dylib */; };
 		45A6019A1F465BDE003B5872 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A601981F465BDE003B5872 /* Bolts.framework */; };
 		45A6019B1F465BDE003B5872 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A601991F465BDE003B5872 /* Parse.framework */; };
@@ -102,7 +101,6 @@
 		45436BF119BEDEE100F9774A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		45436BF319BEDEE900F9774A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		45436BF519BEDEFB00F9774A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		454A03091BDF664D00ECE079 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		456983171B884D5800E7FDB7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		45A601981F465BDE003B5872 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		45A601991F465BDE003B5872 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
