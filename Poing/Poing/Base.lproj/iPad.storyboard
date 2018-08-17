@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--About-->
@@ -42,16 +45,16 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8P6-9l-acL">
                                                     <rect key="frame" x="0.0" y="0.0" width="146" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <state key="normal" title="Button" image="portrait7">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="portraitPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="mcB-Nb-uny"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
                                             <outlet property="portraitButton" destination="8P6-9l-acL" id="34P-Ks-tY8"/>
@@ -66,23 +69,23 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet the Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQe-p9-e7o">
                                 <rect key="frame" x="324" y="40" width="240" height="46"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vh-oh-aj3">
                                 <rect key="frame" x="204" y="94" width="480" height="581"/>
-                                <mutableString key="text">iobot is an app designed by the AgencyAgency team at ‘Iolani School. The AgencyAgency class includes nine members, two instructors and seven students. Here is how it all started.
+                                <string key="text">iobot is an app designed by the AgencyAgency team at ‘Iolani School. The AgencyAgency class includes nine members, two instructors and seven students. Here is how it all started.
 
 Students at ‘Iolani have the option of choosing an elective for the semester. With the beautiful addition of the Sullivan center, more iPad and technology-centered courses were provided. One of those classes was iPad App Design &amp; Development. During this class, students leaned how to code, how to design an app, about the processes to make an app, and the techniques needed to build an app from scratch. Since the class' intent was to make the environment more work friendly, the class was not oriented toward teaching to students, but instead as a design office. A design office has everyone on the team, equal to one another, contributing ideas and thoughts to help improve the progress of the app.
 
 The first semester of the 2013-2014 school year was the first class to take the iPad App Design &amp; Development class. Over 18 weeks, students learned fundamentals in coding, the processes in design and research, as well as had experience presenting ideas and prototypes to the group.
 
-The AgencyAgency team wanted to create an app that would help the lives of ‘Iolani students and teachers. After brainstorming and sifting through ideas, the team, came up with an idea to create an app that would improve the scheduling process (meetings) between students and faculty. The team surveyed students and teachers, asking them what they would want to improve in the schedule-meeting process. The team received all of the data and research that they needed. And, after a month of researching and planning, the team came up with iobot.</mutableString>
+The AgencyAgency team wanted to create an app that would help the lives of ‘Iolani students and teachers. After brainstorming and sifting through ideas, the team, came up with an idea to create an app that would improve the scheduling process (meetings) between students and faculty. The team surveyed students and teachers, asking them what they would want to improve in the schedule-meeting process. The team received all of the data and research that they needed. And, after a month of researching and planning, the team came up with iobot.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="7Vh-oh-aj3" secondAttribute="trailing" constant="84" id="17X-2K-Yeg"/>
                             <constraint firstAttribute="trailing" secondItem="Pb2-Sz-HLK" secondAttribute="trailing" priority="1" constant="648" id="8Ph-Q2-tTS"/>
@@ -127,20 +130,20 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cara" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAD-oW-IUj">
-                                <rect key="frame" x="20" y="20" width="360" height="35"/>
+                                <rect key="frame" x="20" y="40" width="360" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWi-as-42I">
-                                <rect key="frame" x="20" y="63" width="360" height="127"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="83" width="360" height="107"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fAD-oW-IUj" firstAttribute="leading" secondItem="pes-Yf-Ta6" secondAttribute="leading" constant="20" symbolic="YES" id="9dT-tY-wZJ"/>
                             <constraint firstAttribute="trailing" secondItem="NWi-as-42I" secondAttribute="trailing" constant="20" symbolic="YES" id="Yo8-Vl-DdM"/>
@@ -176,14 +179,14 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="455" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9mN-97-6H8">
-                                <rect key="frame" x="340" y="72" width="249" height="882"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="340" y="112" width="249" height="882"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="249" id="TsE-Sy-J9v"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Period Cell" textLabel="xNL-6L-peC" detailTextLabel="DNd-xL-AdE" style="IBUITableViewCellStyleSubtitle" id="fcw-on-lmq" customClass="AABellCyclePeriodCell">
-                                        <rect key="frame" x="0.0" y="86" width="249" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="249" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fcw-on-lmq" id="dKc-ly-SW9">
                                             <rect key="frame" x="0.0" y="0.0" width="249" height="43.5"/>
@@ -193,14 +196,14 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
                                                     <rect key="frame" x="15" y="4" width="32" height="21.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DNd-xL-AdE">
                                                     <rect key="frame" x="15" y="25.5" width="39" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -215,25 +218,25 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic Schedule - Cycle: 7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="N85-bg-g3c">
                                 <rect key="frame" x="340" y="72" width="408" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" text="Selected Data Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vdx-n0-GdX">
                                 <rect key="frame" x="20" y="72" width="312" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" text="left in period 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUr-UR-Q8u">
                                 <rect key="frame" x="20" y="130" width="312" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" text="0:42 seconds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juH-pd-mmI">
                                 <rect key="frame" x="20" y="101" width="312" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lookingRightPoing" translatesAutoresizingMaskIntoConstraints="NO" id="JUE-ft-gFq">
@@ -241,10 +244,10 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ZAF-JV-2P9">
                                 <rect key="frame" x="295" y="72" width="37" height="37"/>
-                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="color" red="0.3333333432674408" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="N85-bg-g3c" firstAttribute="leading" secondItem="ZAF-JV-2P9" secondAttribute="trailing" constant="8" symbolic="YES" id="6bX-HW-ggd"/>
                             <constraint firstItem="9mN-97-6H8" firstAttribute="leading" secondItem="N85-bg-g3c" secondAttribute="leading" id="7J2-Zd-Rum"/>
@@ -254,15 +257,17 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
                             <constraint firstItem="juH-pd-mmI" firstAttribute="top" secondItem="Vdx-n0-GdX" secondAttribute="bottom" constant="8" id="HJD-n0-1Dv"/>
                             <constraint firstItem="N85-bg-g3c" firstAttribute="leading" secondItem="Vdx-n0-GdX" secondAttribute="trailing" constant="8" id="Ipb-oE-zv2"/>
                             <constraint firstItem="Vdx-n0-GdX" firstAttribute="leading" secondItem="Vtr-MJ-Pt5" secondAttribute="leading" constant="20" symbolic="YES" id="J1Q-us-goC"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="juH-pd-mmI" secondAttribute="trailing" constant="20" symbolic="YES" id="S3S-9i-F5R"/>
                             <constraint firstAttribute="trailing" secondItem="N85-bg-g3c" secondAttribute="trailing" constant="20" symbolic="YES" id="UYC-l9-LpT"/>
-                            <constraint firstItem="9mN-97-6H8" firstAttribute="top" secondItem="jdV-pl-aRr" secondAttribute="bottom" constant="20" symbolic="YES" id="YRR-uP-Yeg"/>
-                            <constraint firstItem="1o2-cI-bsE" firstAttribute="top" secondItem="9mN-97-6H8" secondAttribute="bottom" constant="21" id="aoT-BP-Eky"/>
+                            <constraint firstItem="9mN-97-6H8" firstAttribute="top" secondItem="jdV-pl-aRr" secondAttribute="bottom" constant="48" id="YRR-uP-Yeg"/>
+                            <constraint firstItem="1o2-cI-bsE" firstAttribute="top" secondItem="9mN-97-6H8" secondAttribute="bottom" constant="-19" id="aoT-BP-Eky"/>
                             <constraint firstItem="ZAF-JV-2P9" firstAttribute="top" secondItem="N85-bg-g3c" secondAttribute="top" id="b7s-ON-z0h"/>
                             <constraint firstItem="N85-bg-g3c" firstAttribute="top" secondItem="jdV-pl-aRr" secondAttribute="bottom" constant="8" id="bWs-oP-bPp"/>
                             <constraint firstItem="Vdx-n0-GdX" firstAttribute="leading" secondItem="juH-pd-mmI" secondAttribute="leading" id="dTh-Kb-QHG"/>
                             <constraint firstItem="mUr-UR-Q8u" firstAttribute="width" secondItem="Vdx-n0-GdX" secondAttribute="width" id="nna-cJ-4L3"/>
                             <constraint firstItem="mUr-UR-Q8u" firstAttribute="top" secondItem="juH-pd-mmI" secondAttribute="bottom" constant="8" id="pI1-4G-Vcq"/>
                             <constraint firstItem="mUr-UR-Q8u" firstAttribute="leading" secondItem="juH-pd-mmI" secondAttribute="leading" id="pac-yC-eQy"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mUr-UR-Q8u" secondAttribute="trailing" constant="20" symbolic="YES" id="tl7-J9-3lu"/>
                             <constraint firstItem="mUr-UR-Q8u" firstAttribute="width" secondItem="juH-pd-mmI" secondAttribute="width" id="v0j-p7-eHo"/>
                             <constraint firstItem="Vdx-n0-GdX" firstAttribute="top" secondItem="jdV-pl-aRr" secondAttribute="bottom" constant="20" symbolic="YES" id="z92-XB-XAa"/>
                         </constraints>
@@ -290,27 +295,27 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ghp-A7-HFi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="School Day Cell" textLabel="Zsx-Ev-UJ6" detailTextLabel="Lxi-DO-6C8" style="IBUITableViewCellStyleSubtitle" id="FHP-aK-x8p">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FHP-aK-x8p" id="dp3-Ul-OHe">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zsx-Ev-UJ6">
-                                            <rect key="frame" x="15" y="4" width="32" height="21.5"/>
+                                            <rect key="frame" x="16" y="4" width="32" height="21.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lxi-DO-6C8">
-                                            <rect key="frame" x="15" y="25.5" width="39" height="14.5"/>
+                                            <rect key="frame" x="16" y="25.5" width="39" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -342,6 +347,7 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
             <objects>
                 <navigationController id="5E1-5R-Pqm" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="qRt-8H-iy8">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -375,7 +381,7 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="tDi-6K-aOA" kind="relationship" relationship="viewControllers" id="pKG-bw-A6T"/>
@@ -392,7 +398,6 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JVd-3x-x5E" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ac-tV-63a">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -412,9 +417,4 @@ The AgencyAgency team wanted to create an app that would help the lives of ‘Io
         <image name="lookingRightPoing" width="395" height="454"/>
         <image name="portrait7" width="100" height="100"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>
