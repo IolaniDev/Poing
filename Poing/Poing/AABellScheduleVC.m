@@ -237,7 +237,7 @@
     if (!_displayLink) {
         _displayLink = [CADisplayLink displayLinkWithTarget:self
                                                    selector:@selector(tick:)];
-        _displayLink.frameInterval = 60;
+        _displayLink.preferredFramesPerSecond = 60;
         [_displayLink addToRunLoop:[NSRunLoop currentRunLoop]
                            forMode:NSDefaultRunLoopMode];
         _displayLink.paused = YES;
