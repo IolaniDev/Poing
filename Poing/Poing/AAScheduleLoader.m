@@ -25,6 +25,7 @@
 #define BELL_BASIC @"Basic Schedule"
 #define BELL_CHAPEL @"Chapel Schedule"
 #define BELL_SPECIAL_FAIR_DAY @"Special Fair Day Schedule"
+#define BELL_MAY_DAY @"May Day Schedule"
 #define BELL_ATHLETIC_ASSEMBLY @"Athletic Assembly Schedule"
 #define BELL_SCHEDULE_A @"A Schedule"
 #define BELL_SCHEDULE_B @"B Schedule"
@@ -257,6 +258,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadAssembly3PeriodDataIntoContext:context];
     [self loadAthleticPeriodDataIntoContext:context];
     [self loadFairPeriodDataIntoContext:context];
+    [self loadMayDayPeriodDataIntoContext:context];
     [self loadABCDScheduleDataIntoContext:context];
     [self loadEFScheduleDataIntoContext:context];
     [self loadAssemblyEF1ScheduleDataIntoContect:context];
@@ -490,6 +492,39 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                periods:periods
                  times:times intoManagedObjectContext:context];
     
+}
+
++ (void)loadMayDayPeriodDataIntoContext: (NSManagedObjectContext *)context
+{
+    NSArray *periods = nil;
+    NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
+                       @{@"start": @"07:50", @"end": @"08:26"},
+                       @{@"start": @"08:31", @"end": @"09:07"},
+                       @{@"start": @"09:12", @"end": @"10:12"},
+                       @{@"start": @"10:17", @"end": @"10:53"},
+                       @{@"start": @"10:58", @"end": @"11:34"},
+                       @{@"start": @"11:39", @"end": @"12:15"},
+                       @{@"start": @"12:15", @"end": @"12:57"},
+                       @{@"start": @"13:02", @"end": @"13:38"},
+                       @{@"start": @"13:38", @"end": @"14:19"},
+                       @{@"start": @"14:24", @"end": @"15:00"}];
+    
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_ASSEMBLY,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_5,
+                PERIOD_LUNCH,
+                PERIOD_6,
+                PERIOD_7,
+                PERIOD_8];
+    
+    [self loadBellName:BELL_MAY_DAY
+             cycleName:CYCLE_REGULAR
+               periods:periods times:times
+                    intoManagedObjectContext:context];
 }
 
 + (void)loadABCDScheduleDataIntoContext: (NSManagedObjectContext *)context
