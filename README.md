@@ -5,5 +5,7 @@ iobot is a schedule data app designed for use at ['Iolani School](https://www.io
 ## For consumer use
 If you are looking for a version of iobot to install on your iOS device (iPhone, iPad, iPod Touch, etc.), please visit the [App Store](https://schedule.iolani.app/) to download.
 
+*Note: we only support devices running iOS 11+*
+
 ## Contributing
 We welcome pull requests and any help you wish to offer to iobot.  Please see [CONTRIBUTING.md](https://github.com/IolaniDev/iobot/blob/master/CONTRIBUTING.md) for more details.
