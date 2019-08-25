@@ -18,7 +18,7 @@
 #import <CoreData/CoreData.h>
 #import <Parse/PFCloud.h>
 #import <Parse/PFQuery.h>
-#import <Parse/PFConfig.h>
+//#import <Parse/PFConfig.h>
 
 #define BELL_ASSEMBLY_1 @"Assembly 1 Schedule"
 #define BELL_ASSEMBLY_3 @"Assembly 3 Schedule"
@@ -65,23 +65,17 @@
 + (BOOL)scheduleLoadRequired:(NSManagedObjectContext *)context
 {
     // Check if schedules need to be loaded from JSON file
-    PFConfig *config = [PFConfig currentConfig];
-    if(config[@"firstDay"] && config[@"lastDay"]) {
-        BOOL hasFirstDay = (BOOL)[SchoolDay schoolDayForString:config[@"firstDay"]
-                                                inContext:context];
+    BOOL hasFirstDay = (BOOL)[SchoolDay schoolDayForString: @"2019-08-26"
+                                                 inContext:context];
     
-        BOOL hasLastDay = (BOOL)[SchoolDay schoolDayForString:config[@"lastDay"]
+    BOOL hasLastDay = (BOOL)[SchoolDay schoolDayForString: @"2020-05-29"
                                                 inContext:context];
-        return !(hasFirstDay && hasLastDay);
-    } else {
-        // Return true if PFConfig is not loaded yet (e.g. app has never been run)
-        return true;
-    }
+    return !(hasFirstDay && hasLastDay);
 }
 
 + (void)loadScheduleDataWithContext:(NSManagedObjectContext *)context
 {
-    [self verifyCurrentAppVersion];
+//    [self verifyCurrentAppVersion];
     if ([self scheduleLoadRequired:context])    {
         // Parse schedule:
         [self loadScheduleJSONIntoContext:context];
@@ -90,52 +84,52 @@
         // Load period times:
         [self loadBellCyclePeriodDataIntoContext:context];
     } else  {
-        [self fetchNewSchedules: context];
+//        [self fetchNewSchedules: context];
     }
 }
 
-+ (void)verifyCurrentAppVersion {
-    NSString *currentVer = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-    NSString *bundleID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
-    [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
-        if(!error) {
-            if([bundleID isEqualToString:config[@"appleDistroBundleID"]]) {
-                NSString *currentTFVer = config[@"currentTFVer"];
-                NSString *currentASVer = config[@"currentASVer"];
-                NSString *currentARVer = config[@"currentARVer"];
-                NSLog(@"Fetched latest version info for iobot Apple distro v%@, v%@, and v%@.", currentASVer, currentTFVer, currentARVer);
-                if(!error && ![currentVer containsString:currentTFVer] && ![currentVer containsString:currentASVer] && ![currentVer containsString:currentARVer]) {
-                    NSString *message = config[@"messageAppleDistro"];
-                    NSString *header = config[@"headerAppleDistro"];
-                    NSLog(@"iobot v%@ is out of date.  Currently valid versions are: %@, %@, %@.  Received prompt: %@, %@", currentVer, currentASVer, currentTFVer, currentARVer, header, message);
-                    
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:header message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                    [alert show];
-                }
-            } else if([bundleID isEqualToString:config[@"selfServiceBundleID"]]) {
-                NSString *appVer = config[@"currentSSVer"];
-                NSString *message = config[@"messageSS"];
-                NSString *header = config[@"messageHeaderSS"];
-                NSLog(@"Fetched latest version info for iobot in-house v%@.", appVer);
-                if(![currentVer isEqualToString:appVer]) {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:header message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
-                    NSLog(@"App is out of date.  Version %@ reported, currently running version %@.  Received prompt: %@, %@", appVer, currentVer, header, message);
-                    [alert show];
-                } else {
-                    NSLog(@"App install is up to date.");
-                }
-            } else {
-                NSLog(@"Currently running unsupported bundle ID: %@.", bundleID);
-            }
-        }
-        else {
-            // currentVer was not retrieved, handle
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to connect to the Internet!" message:@"Please connect to the Internet to get the latest schedule updates." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            NSLog(@"Error retrieving current app version, running version %@.", currentVer);
-            [alert show];
-        }
-    }];
-}
+//+ (void)verifyCurrentAppVersion {
+//    NSString *currentVer = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+//    NSString *bundleID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
+//    [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
+//        if(!error) {
+//            if([bundleID isEqualToString:config[@"appleDistroBundleID"]]) {
+//                NSString *currentTFVer = config[@"currentTFVer"];
+//                NSString *currentASVer = config[@"currentASVer"];
+//                NSString *currentARVer = config[@"currentARVer"];
+//                NSLog(@"Fetched latest version info for iobot Apple distro v%@, v%@, and v%@.", currentASVer, currentTFVer, currentARVer);
+//                if(!error && ![currentVer containsString:currentTFVer] && ![currentVer containsString:currentASVer] && ![currentVer containsString:currentARVer]) {
+//                    NSString *message = config[@"messageAppleDistro"];
+//                    NSString *header = config[@"headerAppleDistro"];
+//                    NSLog(@"iobot v%@ is out of date.  Currently valid versions are: %@, %@, %@.  Received prompt: %@, %@", currentVer, currentASVer, currentTFVer, currentARVer, header, message);
+//
+//                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:header message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//                    [alert show];
+//                }
+//            } else if([bundleID isEqualToString:config[@"selfServiceBundleID"]]) {
+//                NSString *appVer = config[@"currentSSVer"];
+//                NSString *message = config[@"messageSS"];
+//                NSString *header = config[@"messageHeaderSS"];
+//                NSLog(@"Fetched latest version info for iobot in-house v%@.", appVer);
+//                if(![currentVer isEqualToString:appVer]) {
+//                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:header message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+//                    NSLog(@"App is out of date.  Version %@ reported, currently running version %@.  Received prompt: %@, %@", appVer, currentVer, header, message);
+//                    [alert show];
+//                } else {
+//                    NSLog(@"App install is up to date.");
+//                }
+//            } else {
+//                NSLog(@"Currently running unsupported bundle ID: %@.", bundleID);
+//            }
+//        }
+//        else {
+//            // currentVer was not retrieved, handle
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to connect to the Internet!" message:@"Please connect to the Internet to get the latest schedule updates." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//            NSLog(@"Error retrieving current app version, running version %@.", currentVer);
+//            [alert show];
+//        }
+//    }];
+//}
 
 + (void)verifyBellsCyclesPeriodsWithContext:(NSManagedObjectContext *)context
 {
@@ -183,43 +177,43 @@
     }
 }
 
-+ (void)fetchNewSchedules:(NSManagedObjectContext *)context
-{
-    // fetch new schedules from Parse
-    PFQuery *newScheduleQuery = [PFQuery queryWithClassName:@"NewSchedule"];
-    // set cache policy
-    newScheduleQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    [newScheduleQuery addAscendingOrder:@"updatedAt"];
-    // load any new schedules from Parse into context
-    [newScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *newSchedules, NSError *error) {
-        if(!error)  {
-            for(PFObject *schedule in newSchedules)    {
-                [self loadBellName:[schedule objectForKey:@"bellName"]
-                         cycleName:[schedule objectForKey:@"cycleName"]
-                           periods:[schedule objectForKey:@"periods"]
-                             times:[schedule objectForKey:@"times"]
-          intoManagedObjectContext:context];
-            }
-        }
-    }];
-    
-    PFQuery *missingScheduleQuery = [PFQuery queryWithClassName:@"Override"];
-    missingScheduleQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    [missingScheduleQuery addAscendingOrder:@"updatedAt"];
-    [missingScheduleQuery whereKey:@"isMissing" equalTo:@YES];
-    [missingScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *missingSchedules, NSError *error) {
-        if(!error)  {
-            for(PFObject *schedule in missingSchedules) {
-                [SchoolDay schoolDayWithDayString:[schedule objectForKey:@"dayString"]
-                                         bellName:[schedule objectForKey:@"bellName"]
-                                        cycleName:[schedule objectForKey:@"cycleName"]
-                           inManagedObjectContext:context];
-            }
-        }
-    }];
-    
-    [self overrides:context];
-}
+//+ (void)fetchNewSchedules:(NSManagedObjectContext *)context
+//{
+//    // fetch new schedules from Parse
+//    PFQuery *newScheduleQuery = [PFQuery queryWithClassName:@"NewSchedule"];
+//    // set cache policy
+//    newScheduleQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//    [newScheduleQuery addAscendingOrder:@"updatedAt"];
+//    // load any new schedules from Parse into context
+//    [newScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *newSchedules, NSError *error) {
+//        if(!error)  {
+//            for(PFObject *schedule in newSchedules)    {
+//                [self loadBellName:[schedule objectForKey:@"bellName"]
+//                         cycleName:[schedule objectForKey:@"cycleName"]
+//                           periods:[schedule objectForKey:@"periods"]
+//                             times:[schedule objectForKey:@"times"]
+//          intoManagedObjectContext:context];
+//            }
+//        }
+//    }];
+//
+//    PFQuery *missingScheduleQuery = [PFQuery queryWithClassName:@"Override"];
+//    missingScheduleQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//    [missingScheduleQuery addAscendingOrder:@"updatedAt"];
+//    [missingScheduleQuery whereKey:@"isMissing" equalTo:@YES];
+//    [missingScheduleQuery findObjectsInBackgroundWithBlock:^(NSArray *missingSchedules, NSError *error) {
+//        if(!error)  {
+//            for(PFObject *schedule in missingSchedules) {
+//                [SchoolDay schoolDayWithDayString:[schedule objectForKey:@"dayString"]
+//                                         bellName:[schedule objectForKey:@"bellName"]
+//                                        cycleName:[schedule objectForKey:@"cycleName"]
+//                           inManagedObjectContext:context];
+//            }
+//        }
+//    }];
+//
+//    [self overrides:context];
+//}
 
 #pragma mark - Load Bell Cycle Period Data
 
@@ -267,7 +261,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadAssemblyEF3ScheduleDataIntoContect:context];
  
     // These must go last. They correct errors in the raw schedule.
-    [self fetchNewSchedules:context];
+    //[self fetchNewSchedules:context];
 }
 
 + (void)overDayString:(NSString *)dayString
@@ -294,25 +288,25 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
 
 + (void)overrides:(NSManagedObjectContext *)context
 {
-    PFQuery *overrideQuery = [PFQuery queryWithClassName:@"Override"];
-    // load query from cache first (if available), then load from network
-    overrideQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    // load most recent overrides first
-    [overrideQuery addAscendingOrder:@"updatedAt"];
-    [overrideQuery whereKey:@"isMissing" equalTo:@NO];
-    [overrideQuery findObjectsInBackgroundWithBlock:^(NSArray *overrides, NSError *error) {
-        if(!error)  {
-            for(PFObject *schedule in overrides)   {
-                [self overDayString:[schedule objectForKey:@"dayString"]
-                           bellName:[schedule objectForKey:@"bellName"]
-                          cycleName:[schedule objectForKey:@"cycleName"]
-                            context:context];
-            }
-            NSLog(@"Retrieved and loaded overrides.");
-        } else  {
-            NSLog(@"Unable to retrieve overrides from both network and cache.");
-        }
-    }];
+//    PFQuery *overrideQuery = [PFQuery queryWithClassName:@"Override"];
+//    // load query from cache first (if available), then load from network
+//    overrideQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//    // load most recent overrides first
+//    [overrideQuery addAscendingOrder:@"updatedAt"];
+//    [overrideQuery whereKey:@"isMissing" equalTo:@NO];
+//    [overrideQuery findObjectsInBackgroundWithBlock:^(NSArray *overrides, NSError *error) {
+//        if(!error)  {
+//            for(PFObject *schedule in overrides)   {
+//                [self overDayString:[schedule objectForKey:@"dayString"]
+//                           bellName:[schedule objectForKey:@"bellName"]
+//                          cycleName:[schedule objectForKey:@"cycleName"]
+//                            context:context];
+//            }
+//            NSLog(@"Retrieved and loaded overrides.");
+//        } else  {
+//            NSLog(@"Unable to retrieve overrides from both network and cache.");
+//        }
+//    }];
     // Leaving overrides in as example code
     // Change bell-cycle for Moving Up Chapel day from
     // regular "Chapel" to "Chapel Moving Up".
