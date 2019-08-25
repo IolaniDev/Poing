@@ -19,7 +19,6 @@
 		456983181B884D5800E7FDB7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 456983171B884D5800E7FDB7 /* libsqlite3.dylib */; };
 		4574A7B021263E0D00818B14 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4574A7AE21263E0B00818B14 /* Bolts.framework */; };
 		4574A7B121263E0D00818B14 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4574A7AF21263E0D00818B14 /* Parse.framework */; };
-		45B75E841B8DA086000B4ACA /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B75E831B8DA086000B4ACA /* libstdc++.6.dylib */; };
 		45B75E851B8DA092000B4ACA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D05B56198E331800063674 /* libz.dylib */; };
 		45D817A31E8CD9B0002ADC19 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D817A11E8CD9B0002ADC19 /* Fabric.framework */; };
 		45D817A41E8CD9B0002ADC19 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D817A21E8CD9B0002ADC19 /* Crashlytics.framework */; };
@@ -216,7 +215,6 @@
 			files = (
 				45B75E851B8DA092000B4ACA /* libz.dylib in Frameworks */,
 				4574A7B021263E0D00818B14 /* Bolts.framework in Frameworks */,
-				45B75E841B8DA086000B4ACA /* libstdc++.6.dylib in Frameworks */,
 				45D817A31E8CD9B0002ADC19 /* Fabric.framework in Frameworks */,
 				456983181B884D5800E7FDB7 /* libsqlite3.dylib in Frameworks */,
 				45436BF619BEDEFB00F9774A /* SystemConfiguration.framework in Frameworks */,
