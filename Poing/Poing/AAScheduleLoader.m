@@ -254,6 +254,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
 + (void)loadBellCyclePeriodDataIntoContext:(NSManagedObjectContext *)context
 {
     [self loadBasicPeriodDataIntoContext:context];
+    [self loadChapelPeriodDataIntoContext:context];
     [self loadAssembly1PeriodDataIntoContext:context];
     [self loadAssembly3PeriodDataIntoContext:context];
     [self loadAthleticPeriodDataIntoContext:context];
@@ -345,6 +346,40 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
                        @{@"start": @"13:27", @"end": @"14:11"},
                        @{@"start": @"14:16", @"end": @"15:00"}];
     periods = @[PERIOD_HOME_ROOM,
+                PERIOD_1,
+                PERIOD_2,
+                PERIOD_3,
+                PERIOD_4,
+                PERIOD_5,
+                PERIOD_LUNCH,
+                PERIOD_6,
+                PERIOD_7,
+                PERIOD_8];
+    [self loadBellName:bellType
+             cycleName:CYCLE_REGULAR
+               periods:periods
+                 times:times intoManagedObjectContext:context];
+}
+
++ (void)loadChapelPeriodDataIntoContext:(NSManagedObjectContext *)context
+{
+    NSString *bellType = BELL_CHAPEL;
+    NSArray *periods = nil;
+    
+    // CHAPEL - CYCLE 1
+    NSArray *times = @[@{@"start": @"07:40", @"end": @"07:45"},
+                       @{@"start": @"07:50", @"end": @"08:09"},
+                       @{@"start": @"08:14", @"end": @"08:55"},
+                       @{@"start": @"09:00", @"end": @"09:41"},
+                       @{@"start": @"09:46", @"end": @"10:27"},
+                       @{@"start": @"10:32", @"end": @"11:13"},
+                       @{@"start": @"11:18", @"end": @"11:59"},
+                       @{@"start": @"11:59", @"end": @"12:42"},
+                       @{@"start": @"12:47", @"end": @"13:28"},
+                       @{@"start": @"13:33", @"end": @"14:14"},
+                       @{@"start": @"14:19", @"end": @"15:00"}];
+    periods = @[PERIOD_HOME_ROOM,
+                PERIOD_CHAPEL,
                 PERIOD_1,
                 PERIOD_2,
                 PERIOD_3,
