@@ -39,6 +39,7 @@
 #define BELL_ASSEMBLY_F2 @"F2 Schedule"
 #define BELL_ASSEMBLY_E3 @"E3 Schedule"
 #define BELL_ASSEMBLY_F3 @"F3 Schedule"
+#define NO_SCHOOL @"No School"
 
 #define CYCLE_REGULAR @"Regular"
 #define CYCLE_ALTERNATE @"Alternate"
@@ -84,7 +85,7 @@
         // Load period times:
         [self loadBellCyclePeriodDataIntoContext:context];
     } else  {
-//        [self fetchNewSchedules: context];
+        [self overrides: context];
     }
 }
 
@@ -261,7 +262,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadAssemblyEF3ScheduleDataIntoContect:context];
  
     // These must go last. They correct errors in the raw schedule.
-    //[self fetchNewSchedules:context];
+    [self overrides:context];
 }
 
 + (void)overDayString:(NSString *)dayString
