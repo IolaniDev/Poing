@@ -276,7 +276,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];
     
-    if (!matches || ([matches count] > 1 || ![matches count])) {
+    if (!matches || ([matches count] > 1 )) {
         // handle error
         NSAssert(NO, @"wrong number of school day matches returned.");
     } else {
