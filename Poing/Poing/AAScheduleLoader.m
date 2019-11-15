@@ -71,6 +71,7 @@
     
     BOOL hasLastDay = (BOOL)[SchoolDay schoolDayForString: @"2020-05-29"
                                                 inContext:context];
+
     return !(hasFirstDay && hasLastDay);
 }
 
@@ -84,8 +85,6 @@
         [self verifyBellsCyclesPeriodsWithContext:context];
         // Load period times:
         [self loadBellCyclePeriodDataIntoContext:context];
-    } else  {
-        [self overrides: context];
     }
 }
 
@@ -308,6 +307,41 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
 //            NSLog(@"Unable to retrieve overrides from both network and cache.");
 //        }
 //    }];
+    [self overDayString:@"2019-12-07"
+               bellName:NO_SCHOOL
+              cycleName:CYCLE_REGULAR
+                context:context];
+
+    [self overDayString:@"2019-12-08"
+               bellName:NO_SCHOOL
+              cycleName:CYCLE_REGULAR
+                context:context];
+    
+    [self overDayString:@"2019-12-09"
+               bellName:BELL_SCHEDULE_B
+              cycleName:CYCLE_REGULAR
+                context:context];
+    
+    [self overDayString:@"2019-12-10"
+               bellName:BELL_SCHEDULE_C
+              cycleName:CYCLE_REGULAR
+                context:context];
+    
+    [self overDayString:@"2019-12-11"
+               bellName:BELL_SCHEDULE_D
+              cycleName:CYCLE_REGULAR
+                context:context];
+    
+    [self overDayString:@"2019-12-12"
+               bellName:BELL_SCHEDULE_A
+              cycleName:CYCLE_REGULAR
+                context:context];
+
+    [self overDayString:@"2019-12-13"
+               bellName:BELL_SCHEDULE_B
+              cycleName:CYCLE_REGULAR
+                context:context];
+    
     // Leaving overrides in as example code
     // Change bell-cycle for Moving Up Chapel day from
     // regular "Chapel" to "Chapel Moving Up".
