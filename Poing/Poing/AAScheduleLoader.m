@@ -39,6 +39,7 @@
 #define BELL_ASSEMBLY_F2 @"F2 Schedule"
 #define BELL_ASSEMBLY_E3 @"E3 Schedule"
 #define BELL_ASSEMBLY_F3 @"F3 Schedule"
+#define NO_SCHOOL @"No School"
 
 #define CYCLE_REGULAR @"Regular"
 #define CYCLE_ALTERNATE @"Alternate"
@@ -70,7 +71,11 @@
     
     BOOL hasLastDay = (BOOL)[SchoolDay schoolDayForString: @"2020-05-29"
                                                 inContext:context];
-    return !(hasFirstDay && hasLastDay);
+    SchoolDay *day = [SchoolDay schoolDayForString: @"2019-12-09"
+                                                inContext:context];
+    BOOL hasLatestOverride = (BOOL)[day.bellCycle.bell.name isEqualToString: BELL_SCHEDULE_B];
+
+    return !(hasFirstDay && hasLastDay && hasLatestOverride);
 }
 
 + (void)loadScheduleDataWithContext:(NSManagedObjectContext *)context
@@ -83,8 +88,6 @@
         [self verifyBellsCyclesPeriodsWithContext:context];
         // Load period times:
         [self loadBellCyclePeriodDataIntoContext:context];
-    } else  {
-//        [self fetchNewSchedules: context];
     }
 }
 
@@ -261,7 +264,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     [self loadAssemblyEF3ScheduleDataIntoContect:context];
  
     // These must go last. They correct errors in the raw schedule.
-    //[self fetchNewSchedules:context];
+    [self overrides:context];
 }
 
 + (void)overDayString:(NSString *)dayString
@@ -276,7 +279,7 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
     NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];
     
-    if (!matches || ([matches count] > 1 || ![matches count])) {
+    if (!matches || ([matches count] > 1 )) {
         // handle error
         NSAssert(NO, @"wrong number of school day matches returned.");
     } else {
@@ -307,6 +310,41 @@ intoManagedObjectContext:(NSManagedObjectContext *)context
 //            NSLog(@"Unable to retrieve overrides from both network and cache.");
 //        }
 //    }];
+    [self overDayString:@"2019-12-07"
+               bellName:NO_SCHOOL
+              cycleName:CYCLE_REGULAR
+                context:context];
+
+    [self overDayString:@"2019-12-08"
+               bellName:NO_SCHOOL
+              cycleName:CYCLE_REGULAR
+                context:context];
+    
+    [self overDayString:@"2019-12-09"
+               bellName:BELL_SCHEDULE_B
+              cycleName:CYCLE_REGULAR
+                context:context];
+    
+    [self overDayString:@"2019-12-10"
+               bellName:BELL_SCHEDULE_C
+              cycleName:CYCLE_REGULAR
+                context:context];
+    
+    [self overDayString:@"2019-12-11"
+               bellName:BELL_SCHEDULE_D
+              cycleName:CYCLE_REGULAR
+                context:context];
+    
+    [self overDayString:@"2019-12-12"
+               bellName:BELL_SCHEDULE_A
+              cycleName:CYCLE_REGULAR
+                context:context];
+
+    [self overDayString:@"2019-12-13"
+               bellName:BELL_SCHEDULE_B
+              cycleName:CYCLE_REGULAR
+                context:context];
+    
     // Leaving overrides in as example code
     // Change bell-cycle for Moving Up Chapel day from
     // regular "Chapel" to "Chapel Moving Up".
