@@ -71,8 +71,11 @@
     
     BOOL hasLastDay = (BOOL)[SchoolDay schoolDayForString: @"2020-05-29"
                                                 inContext:context];
+    SchoolDay *day = [SchoolDay schoolDayForString: @"2019-12-09"
+                                                inContext:context];
+    BOOL hasLatestOverride = (BOOL)[day.bellCycle.bell.name isEqualToString: BELL_SCHEDULE_B];
 
-    return !(hasFirstDay && hasLastDay);
+    return !(hasFirstDay && hasLastDay && hasLatestOverride);
 }
 
 + (void)loadScheduleDataWithContext:(NSManagedObjectContext *)context
