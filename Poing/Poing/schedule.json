@@ -73,6 +73,8 @@
     {"day": "2019-12-09", "cycle": "Regular", "title": "D Schedule"},
     {"day": "2019-12-10", "cycle": "Regular", "title": "A Schedule"},
     {"day": "2019-12-11", "cycle": "Regular", "title": "B Schedule"},
+    {"day": "2019-12-12", "cycle": "Regular", "title": "A Schedule"},
+    {"day": "2019-12-13", "cycle": "Regular", "title": "B Schedule"},
     {"day": "2019-12-16", "cycle": "Regular", "title": "C Schedule"},
     {"day": "2019-12-17", "cycle": "Regular", "title": "D Schedule"},
     {"day": "2019-12-18", "cycle": "Regular", "title": "E2 Schedule"},

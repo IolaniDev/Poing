@@ -71,7 +71,7 @@
     
     BOOL hasLastDay = (BOOL)[SchoolDay schoolDayForString: @"2020-05-29"
                                                 inContext:context];
-    SchoolDay *day = [SchoolDay schoolDayForString: @"2019-12-09"
+    SchoolDay *day = [SchoolDay schoolDayForString: @"2019-12-13"
                                                 inContext:context];
     BOOL hasLatestOverride = (BOOL)[day.bellCycle.bell.name isEqualToString: BELL_SCHEDULE_B];
 
